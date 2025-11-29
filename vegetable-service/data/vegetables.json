@@ -1,0 +1,414 @@
+{
+    "vegetables": [
+        {
+            "_id": 25,
+            "name": "Spinach",
+            "image": "",
+            "category": "Leafy Vegetable",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Low",
+            "price": 30
+        },
+        {
+            "_id": 26,
+            "name": "Lettuce",
+            "image": "",
+            "category": "Leafy Vegetable",
+            "soilType": "Sandy Loam",
+            "season": "Rabi",
+            "waterRequirement": "Low",
+            "price": 40
+        },
+        {
+            "_id": 27,
+            "name": "Kale",
+            "image": "",
+            "category": "Leafy Vegetable",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Moderate",
+            "price": 50
+        },
+        {
+            "_id": 28,
+            "name": "Fenugreek (Methi)",
+            "image": "",
+            "category": "Leafy Vegetable",
+            "soilType": "Loamy",
+            "season": "Kharif",
+            "waterRequirement": "Low",
+            "price": 25
+        },
+        {
+            "_id": 29,
+            "name": "Amaranth leaves (Chaulai)",
+            "image": "",
+            "category": "Leafy Vegetable",
+            "soilType": "Loamy",
+            "season": "Kharif",
+            "waterRequirement": "Low",
+            "price": 28
+        },
+        {
+            "_id": 30,
+            "name": "Mustard greens (Sarson)",
+            "image": "",
+            "category": "Leafy Vegetable",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Low",
+            "price": 26
+        },
+        {
+            "_id": 31,
+            "name": "Coriander leaves (Cilantro)",
+            "image": "",
+            "category": "Leafy Vegetable",
+            "soilType": "Sandy Loam",
+            "season": "Rabi",
+            "waterRequirement": "Low",
+            "price": 60
+        },
+        {
+            "_id": 32,
+            "name": "Curry leaves",
+            "image": "",
+            "category": "Leafy Vegetable",
+            "soilType": "Sandy Loam",
+            "season": "Rabi",
+            "waterRequirement": "Moderate",
+            "price": 55
+        },
+        {
+            "_id": 33,
+            "name": "Beet greens",
+            "image": "",
+            "category": "Leafy Vegetable",
+            "soilType": "Sandy Loam",
+            "season": "Rabi",
+            "waterRequirement": "Low",
+            "price": 30
+        },
+        {
+            "_id": 34,
+            "name": "Carrot",
+            "image": "",
+            "category": "Root Vegetable",
+            "soilType": "Sandy Loam",
+            "season": "Rabi",
+            "waterRequirement": "Moderate",
+            "price": 35
+        },
+        {
+            "_id": 35,
+            "name": "Beetroot",
+            "image": "",
+            "category": "Root Vegetable",
+            "soilType": "Sandy Loam",
+            "season": "Kharif",
+            "waterRequirement": "Low",
+            "price": 32
+        },
+        {
+            "_id": 36,
+            "name": "Radish",
+            "image": "",
+            "category": "Root Vegetable",
+            "soilType": "Sandy Loam",
+            "season": "Rabi",
+            "waterRequirement": "High",
+            "price": 20
+        },
+        {
+            "_id": 37,
+            "name": "Turnip",
+            "image": "",
+            "category": "Root Vegetable",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Moderate",
+            "price": 22
+        },
+        {
+            "_id": 38,
+            "name": "Sweet potato",
+            "image": "",
+            "category": "Root Vegetable",
+            "soilType": "Sandy Loam",
+            "season": "Kharif",
+            "waterRequirement": "Low",
+            "price": 40
+        },
+        {
+            "_id": 39,
+            "name": "Yam",
+            "image": "",
+            "category": "Root Vegetable",
+            "soilType": "Sandy Loam",
+            "season": "Kharif",
+            "waterRequirement": "High",
+            "price": 45
+        },
+        {
+            "_id": 40,
+            "name": "Taro (Arbi)",
+            "image": "",
+            "category": "Root Vegetable",
+            "soilType": "Clay Loam",
+            "season": "Kharif",
+            "waterRequirement": "High",
+            "price": 48
+        },
+        {
+            "_id": 41,
+            "name": "Elephant Foot Yam",
+            "image": "",
+            "category": "Root Vegetable",
+            "soilType": "Clay Loam",
+            "season": "Kharif",
+            "waterRequirement": "Moderate",
+            "price": 52
+        },
+        {
+            "_id": 42,
+            "name": "Onion",
+            "image": "",
+            "category": "Bulb Vegetable",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Moderate",
+            "price": 25
+        },
+        {
+            "_id": 43,
+            "name": "Garlic",
+            "image": "",
+            "category": "Bulb Vegetable",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Low",
+            "price": 80
+        },
+        {
+            "_id": 44,
+            "name": "Shallot",
+            "image": "",
+            "category": "Bulb Vegetable",
+            "soilType": "Sandy Loam",
+            "season": "Rabi",
+            "waterRequirement": "Low",
+            "price": 50
+        },
+        {
+            "_id": 45,
+            "name": "Brinjal (Eggplant)",
+            "image": "",
+            "category": "Fruit Vegetable",
+            "soilType": "Loamy",
+            "season": "Kharif",
+            "waterRequirement": "Moderate",
+            "price": 35
+        },
+        {
+            "_id": 46,
+            "name": "Tomato",
+            "image": "",
+            "category": "Fruit Vegetable",
+            "soilType": "Sandy Loam",
+            "season": "Rabi",
+            "waterRequirement": "High",
+            "price": 45
+        },
+        {
+            "_id": 47,
+            "name": "Cucumber",
+            "image": "",
+            "category": "Fruit Vegetable",
+            "soilType": "Sandy Loam",
+            "season": "Kharif",
+            "waterRequirement": "Moderate",
+            "price": 35
+        },
+        {
+            "_id": 48,
+            "name": "Capsicum",
+            "image": "",
+            "category": "Fruit Vegetable",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Moderate",
+            "price": 60
+        },
+        {
+            "_id": 49,
+            "name": "Pumpkin",
+            "image": "",
+            "category": "Fruit Vegetable",
+            "soilType": "Loamy",
+            "season": "Kharif",
+            "waterRequirement": "Moderate",
+            "price": 35
+        },
+        {
+            "_id": 50,
+            "name": "Bottle Gourd",
+            "image": "",
+            "category": "Fruit Vegetable",
+            "soilType": "Loamy",
+            "season": "Kharif",
+            "waterRequirement": "Moderate",
+            "price": 30
+        },
+        {
+            "_id": 51,
+            "name": "Snake Gourd",
+            "image": "",
+            "category": "Fruit Vegetable",
+            "soilType": "Loamy",
+            "season": "Kharif",
+            "waterRequirement": "Moderate",
+            "price": 30
+        },
+        {
+            "_id": 52,
+            "name": "Sponge Gourd",
+            "image": "",
+            "category": "Fruit Vegetable",
+            "soilType": "Loamy",
+            "season": "Kharif",
+            "waterRequirement": "Moderate",
+            "price": 30
+        },
+        {
+            "_id": 53,
+            "name": "Turai (Ridge Gourd)",
+            "image": "",
+            "category": "Fruit Vegetable",
+            "soilType": "Loamy",
+            "season": "Kharif",
+            "waterRequirement": "Moderate",
+            "price": 32
+        },
+        {
+            "_id": 54,
+            "name": "Zucchini",
+            "image": "",
+            "category": "Fruit Vegetable",
+            "soilType": "Loamy",
+            "season": "Kharif",
+            "waterRequirement": "Moderate",
+            "price": 55
+        },
+        {
+            "_id": 55,
+            "name": "Broccoli",
+            "image": "",
+            "category": "Cabbage Family",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Moderate",
+            "price": 80
+        },
+        {
+            "_id": 56,
+            "name": "Cabbage",
+            "image": "",
+            "category": "Cabbage Family",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Moderate",
+            "price": 60
+        },
+        {
+            "_id": 57,
+            "name": "Cauliflower",
+            "image": "",
+            "category": "Cabbage Family",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Moderate",
+            "price": 65
+        },
+        {
+            "_id": 58,
+            "name": "Brussels Sprouts",
+            "image": "",
+            "category": "Cabbage Family",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Moderate",
+            "price": 90
+        },
+        {
+            "_id": 59,
+            "name": "Bok Choy",
+            "image": "",
+            "category": "Cabbage Family",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Moderate",
+            "price": 70
+        },
+        {
+            "_id": 60,
+            "name": "French Beans",
+            "image": "",
+            "category": "Pod & Seed Vegetable",
+            "soilType": "Loamy",
+            "season": "Kharif",
+            "waterRequirement": "Moderate",
+            "price": 55
+        },
+        {
+            "_id": 61,
+            "name": "Broad Beans",
+            "image": "",
+            "category": "Pod & Seed Vegetable",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Moderate",
+            "price": 50
+        },
+        {
+            "_id": 62,
+            "name": "Green Peas",
+            "image": "",
+            "category": "Pod & Seed Vegetable",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Moderate",
+            "price": 45
+        },
+        {
+            "_id": 63,
+            "name": "Jackfruit",
+            "image": "",
+            "category": "Regional/Exotic",
+            "soilType": "Loamy",
+            "season": "Kharif",
+            "waterRequirement": "High",
+            "price": 35
+        },
+        {
+            "_id": 64,
+            "name": "Jerusalem Artichoke",
+            "image": "",
+            "category": "Regional/Exotic",
+            "soilType": "Loamy",
+            "season": "Kharif",
+            "waterRequirement": "Moderate",
+            "price": 75
+        },
+        {
+            "_id": 65,
+            "name": "Asparagus",
+            "image": "",
+            "category": "Regional/Exotic",
+            "soilType": "Loamy",
+            "season": "Rabi",
+            "waterRequirement": "Moderate",
+            "price": 120
+        }
+    ]
+}
