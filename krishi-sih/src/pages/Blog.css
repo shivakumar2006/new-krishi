@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+.blog-container {
+  @apply flex flex-col justify-start items-start mx-auto p-4 min-h-screen;
+  background: #F9F3E0;
+  width: 100%;
+  /* Make it full width up to max */
+  max-width: 768px;
+  /* Increase max width */
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.blog-card {
+  @apply flex items-start gap-6 w-full mb-6 rounded-lg;
+  padding: 20px 40px;
+  /* More padding for spaciousness */
+  background: #F9F3E0;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  /* margin-bottom: 20px; */
+}
+
+.blog-image {
+  @apply rounded-md object-cover;
+  height: 200px;
+  /* Slightly taller */
+  min-width: 120px;
+  /* Increased min width */
+  max-width: 200px;
+  /* Increased max width */
+  flex: 1 0 0;
+  border-radius: 8px;
+}
+
+.blog-content {
+  @apply flex flex-col items-start;
+  gap: 20px;
+  min-width: 150px;
+  /* Increased min width */
+  max-width: 400px;
+  /* Increased max width */
+  flex: 1 0 0;
+}
+
+.blog-title-container {
+  @apply flex items-start w-full;
+  padding: 0 8px;
+  gap: 8px;
+}
+
+.blog-title {
+  @apply flex-1 text-black leading-tight;
+  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  /* Increased font size */
+  font-weight: 700;
+  line-height: 175%;
+  width: auto;
+}
+
+.blog-description-container {
+  @apply flex justify-center items-center w-full;
+  padding: 0 8px;
+  gap: 8px;
+}
+
+.blog-description {
+  @apply flex-1 overflow-hidden;
+  height: auto;
+  color: #737373;
+  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  /* Increased font size */
+  font-weight: 500;
+  line-height: 175%;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 15;
+  -webkit-box-orient: vertical;
+}
