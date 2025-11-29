@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import Login from './Register/Login';
 import BookingPage from './pages/Booking';
 import PricingSystem from './pages/PricingSystem';
+import UserStore from './pages/UserStore';
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/pricing-system" element={<PricingSystem />} />
+        <Route path='/farmer-user' element={<UserStore />} />
       </Routes>
       <Footer />
     </>
