@@ -1,0 +1,751 @@
+{
+    "pesticides": [
+        {
+            "id": "P001",
+            "name": "Confidor",
+            "brand": "Bayer",
+            "price": 620,
+            "imageUrl": "https://www.cropscience.bayer.in/-/media/bcs-inter/content/media/product-images/confidor.png"
+        },
+        {
+            "id": "P002",
+            "name": "Atlantis",
+            "brand": "Bayer",
+            "price": 750,
+            "imageUrl": "https://www.cropscience.bayer.in/-/media/bcs-inter/content/media/product-images/atlantis.png"
+        },
+        {
+            "id": "P003",
+            "name": "Coragen",
+            "brand": "FMC",
+            "price": 2500,
+            "imageUrl": "https://www.fmccrop.com/content/dam/fmc-na/us/en/products/coragen/coragen.png"
+        },
+        {
+            "id": "P004",
+            "name": "Ampligo",
+            "brand": "Syngenta",
+            "price": 1650,
+            "imageUrl": "https://www.syngenta.co.in/sites/g/files/kgtney566/files/ampligo.png"
+        },
+        {
+            "id": "P005",
+            "name": "Tafgor",
+            "brand": "UPL",
+            "price": 520,
+            "imageUrl": "https://www.upl-ltd.com/images/products/tafgar.png"
+        },
+        {
+            "id": "P006",
+            "name": "Oshin",
+            "brand": "Sumitomo",
+            "price": 950,
+            "imageUrl": "https://sumitomo-chem.co.in/wp-content/uploads/2021/05/oshin.png"
+        },
+        {
+            "id": "P007",
+            "name": "Decis",
+            "brand": "Bayer",
+            "price": 320,
+            "imageUrl": "https://www.cropscience.bayer.in/-/media/bcs-inter/content/media/product-images/decis.png"
+        },
+        {
+            "id": "P008",
+            "name": "Regent",
+            "brand": "Bayer",
+            "price": 1180,
+            "imageUrl": "https://www.cropscience.bayer.in/-/media/bcs-inter/content/media/product-images/regent.png"
+        },
+        {
+            "id": "P009",
+            "name": "Acelepryn",
+            "brand": "Syngenta",
+            "price": 4500,
+            "imageUrl": "https://www.syngenta-us.com/sites/syngenta_us/files/styles/product_detail/public/acelepryn.png"
+        },
+        {
+            "id": "P010",
+            "name": "Match",
+            "brand": "Syngenta",
+            "price": 1350,
+            "imageUrl": "https://www.syngenta.co.in/sites/g/files/kgtney566/files/match.png"
+        },
+        {
+            "id": "P011",
+            "name": "SAAF",
+            "brand": "UPL",
+            "price": 400,
+            "imageUrl": "https://www.upl-ltd.com/images/products/saaf.png"
+        },
+        {
+            "id": "P012",
+            "name": "Tilt",
+            "brand": "Syngenta",
+            "price": 680,
+            "imageUrl": "https://www.syngenta.co.in/sites/g/files/kgtney566/files/tilt.png"
+        },
+        {
+            "id": "P013",
+            "name": "Vivando",
+            "brand": "BASF",
+            "price": 2400,
+            "imageUrl": "https://agriculture.basf.com/content/dam/basf-agriculture/images/products/vivando.png"
+        },
+        {
+            "id": "P014",
+            "name": "Acrobat",
+            "brand": "BASF",
+            "price": 2100,
+            "imageUrl": "https://agriculture.basf.com/content/dam/basf-agriculture/images/products/acrobat.png"
+        },
+        {
+            "id": "P015",
+            "name": "Lancer Gold",
+            "brand": "PI Industries",
+            "price": 980,
+            "imageUrl": "https://www.piind.com/wp-content/uploads/lancer-gold.png"
+        }
+    ],
+    "fertilizers": [
+        {
+            "id": "F001",
+            "name": "Urea",
+            "brand": "IFFCO",
+            "price": 280,
+            "imageUrl": "https://www.iffco.in/images/products/urea.png"
+        },
+        {
+            "id": "F002",
+            "name": "DAP",
+            "brand": "IFFCO",
+            "price": 1350,
+            "imageUrl": "https://www.iffco.in/images/products/dap.png"
+        },
+        {
+            "id": "F003",
+            "name": "NPK 14-35-14",
+            "brand": "Coromandel",
+            "price": 1550,
+            "imageUrl": "https://www.coromandel.biz/images/products/npk143514.png"
+        },
+        {
+            "id": "F004",
+            "name": "NPK 20-20-20",
+            "brand": "Zuari",
+            "price": 1450,
+            "imageUrl": "https://zuarichemicals.com/npk202020.png"
+        },
+        {
+            "id": "F005",
+            "name": "MOP",
+            "brand": "Indian Potash",
+            "price": 1200,
+            "imageUrl": "https://www.ipll.in/images/products/mop.png"
+        },
+        {
+            "id": "F006",
+            "name": "SOP",
+            "brand": "Coromandel",
+            "price": 1850,
+            "imageUrl": "https://www.coromandel.biz/images/products/sop.png"
+        },
+        {
+            "id": "F007",
+            "name": "Zinc Sulphate",
+            "brand": "Coromandel",
+            "price": 220,
+            "imageUrl": "https://www.coromandel.biz/images/products/zincsulphate.png"
+        },
+        {
+            "id": "F008",
+            "name": "Magnesium Sulphate",
+            "brand": "IFFCO",
+            "price": 320,
+            "imageUrl": "https://www.iffco.in/images/products/magsulphate.png"
+        },
+        {
+            "id": "F009",
+            "name": "DAP Complex",
+            "brand": "Coromandel",
+            "price": 1400,
+            "imageUrl": "https://www.coromandel.biz/images/products/dapcomplex.png"
+        },
+        {
+            "id": "F010",
+            "name": "Humic Acid",
+            "brand": "Novel",
+            "price": 450,
+            "imageUrl": "https://novelcorp.in/images/humicacid.png"
+        },
+        {
+            "id": "F011",
+            "name": "Calcium Nitrate",
+            "brand": "IFFCO",
+            "price": 780,
+            "imageUrl": "https://www.iffco.in/images/products/calciumnitrate.png"
+        },
+        {
+            "id": "F012",
+            "name": "NPK 12-32-16",
+            "brand": "Coromandel",
+            "price": 1450,
+            "imageUrl": "https://www.coromandel.biz/images/products/npk123216.png"
+        },
+        {
+            "id": "F013",
+            "name": "Potash",
+            "brand": "Indian Potash Ltd",
+            "price": 1100,
+            "imageUrl": "https://www.ipll.in/images/products/potash.png"
+        },
+        {
+            "id": "F014",
+            "name": "Organic Manure",
+            "brand": "IFFCO",
+            "price": 450,
+            "imageUrl": "https://www.iffco.in/images/products/organicmanure.png"
+        },
+        {
+            "id": "F015",
+            "name": "Bio Fertilizer",
+            "brand": "Narmada",
+            "price": 250,
+            "imageUrl": "https://narmadafertilizers.com/images/biofertilizer.png"
+        }
+    ],
+    "seeds": [
+        {
+            "id": "S001",
+            "name": "Mahyco 10G Hybrid Cotton",
+            "brand": "Mahyco",
+            "price": 830,
+            "imageUrl": "https://www.mahyco.com/images/cotton.png"
+        },
+        {
+            "id": "S002",
+            "name": "Pioneer 30V92 Maize",
+            "brand": "Pioneer",
+            "price": 2500,
+            "imageUrl": "https://www.pioneer.com/content/dam/maize.png"
+        },
+        {
+            "id": "S003",
+            "name": "Bayer Arize 6444 Rice",
+            "brand": "Bayer",
+            "price": 480,
+            "imageUrl": "https://www.cropscience.bayer.in/arize.png"
+        },
+        {
+            "id": "S004",
+            "name": "Nunhems Tomato NS-4266",
+            "brand": "BASF Nunhems",
+            "price": 650,
+            "imageUrl": "https://agriculture.basf.com/nunhems/tomato.png"
+        },
+        {
+            "id": "S005",
+            "name": "Syngenta Okra Hybrid",
+            "brand": "Syngenta",
+            "price": 520,
+            "imageUrl": "https://www.syngenta.co.in/images/okra.png"
+        },
+        {
+            "id": "S006",
+            "name": "Rasi 650 Hybrid Cotton",
+            "brand": "Rasi Seeds",
+            "price": 820,
+            "imageUrl": "https://www.rasiseeds.com/cotton.png"
+        },
+        {
+            "id": "S007",
+            "name": "JK Super Paddy",
+            "brand": "JK Seeds",
+            "price": 480,
+            "imageUrl": "https://jkseeds.net/paddy.png"
+        },
+        {
+            "id": "S008",
+            "name": "Beejo Tomato Hybrid",
+            "brand": "Beejo Sheetal",
+            "price": 600,
+            "imageUrl": "https://beejo.com/tomato.png"
+        },
+        {
+            "id": "S009",
+            "name": "IFFCO Urban Garden Spinach",
+            "brand": "IFFCO",
+            "price": 60,
+            "imageUrl": "https://iffcogarden.com/spinach.png"
+        },
+        {
+            "id": "S010",
+            "name": "Seminis Watermelon",
+            "brand": "Seminis (Bayer)",
+            "price": 850,
+            "imageUrl": "https://www.seminis.com/watermelon.png"
+        },
+        {
+            "id": "S011",
+            "name": "Nunhems Bottle Gourd",
+            "brand": "Nunhems",
+            "price": 480,
+            "imageUrl": "https://agriculture.basf.com/bottlegourd.png"
+        },
+        {
+            "id": "S012",
+            "name": "Syngenta Chilli Hybrid",
+            "brand": "Syngenta",
+            "price": 750,
+            "imageUrl": "https://www.syngenta.co.in/chilli.png"
+        },
+        {
+            "id": "S013",
+            "name": "Advanta Corn Hybrid",
+            "brand": "Advanta",
+            "price": 2300,
+            "imageUrl": "https://www.advantaseeds.com/corn.png"
+        },
+        {
+            "id": "S014",
+            "name": "Nuziveedu Cotton Hybrid",
+            "brand": "Nuziveedu",
+            "price": 780,
+            "imageUrl": "https://nuziveeduseeds.com/cotton.png"
+        },
+        {
+            "id": "S015",
+            "name": "BRL Tomato",
+            "brand": "BRL Seeds",
+            "price": 480,
+            "imageUrl": "https://brlseeds.com/tomato.png"
+        }
+    ],
+    "organicCropProtection": [
+        {
+            "id": "OCP001",
+            "name": "Neem Oil 3000 PPM",
+            "brand": "TrustBasket",
+            "price": 250,
+            "imageUrl": "https://trustbasket.com/neem-oil.png"
+        },
+        {
+            "id": "OCP002",
+            "name": "Bio Clean Sweep",
+            "brand": "Multiplex",
+            "price": 320,
+            "imageUrl": "https://multiplexgroup.com/biocleansweep.png"
+        },
+        {
+            "id": "OCP003",
+            "name": "Bio-Pest",
+            "brand": "AgroLife",
+            "price": 280,
+            "imageUrl": "https://agrolife.com/biopest.png"
+        },
+        {
+            "id": "OCP004",
+            "name": "Neem Kavach",
+            "brand": "IFFCO",
+            "price": 180,
+            "imageUrl": "https://iffcogarden.com/neemkavach.png"
+        },
+        {
+            "id": "OCP005",
+            "name": "Herbal Fungicide",
+            "brand": "Organic India",
+            "price": 350,
+            "imageUrl": "https://organicindia.com/fungicide.png"
+        },
+        {
+            "id": "OCP006",
+            "name": "Bio Larvicide",
+            "brand": "Multiplex",
+            "price": 420,
+            "imageUrl": "https://multiplexgroup.com/biolarvicide.png"
+        },
+        {
+            "id": "OCP007",
+            "name": "Organic Miticide",
+            "brand": "AgroLife",
+            "price": 340,
+            "imageUrl": "https://agrolife.com/miticide.png"
+        },
+        {
+            "id": "OCP008",
+            "name": "VBT Neem Power",
+            "brand": "VBT Organics",
+            "price": 280,
+            "imageUrl": "https://vbtofficial.com/neempower.png"
+        },
+        {
+            "id": "OCP009",
+            "name": "Bio-Trap",
+            "brand": "Multiplex",
+            "price": 360,
+            "imageUrl": "https://multiplexgroup.com/biotrap.png"
+        },
+        {
+            "id": "OCP010",
+            "name": "SST Organic Protector",
+            "brand": "SST Organics",
+            "price": 380,
+            "imageUrl": "https://sstorganics.com/protector.png"
+        },
+        {
+            "id": "OCP011",
+            "name": "Herbal Shield",
+            "brand": "TrustBasket",
+            "price": 290,
+            "imageUrl": "https://trustbasket.com/herbalshield.png"
+        },
+        {
+            "id": "OCP012",
+            "name": "Neem Guard",
+            "brand": "Organic Garden",
+            "price": 200,
+            "imageUrl": "https://organicgarden.in/neemguard.png"
+        },
+        {
+            "id": "OCP013",
+            "name": "Bio Defender",
+            "brand": "AgroLife",
+            "price": 300,
+            "imageUrl": "https://agrolife.com/biodefender.png"
+        },
+        {
+            "id": "OCP014",
+            "name": "Natural Fungicide",
+            "brand": "Organic India",
+            "price": 320,
+            "imageUrl": "https://organicindia.com/naturalfungicide.png"
+        },
+        {
+            "id": "OCP015",
+            "name": "Multiplex Biogrow",
+            "brand": "Multiplex",
+            "price": 250,
+            "imageUrl": "https://multiplexgroup.com/biogrow.png"
+        }
+    ],
+    "organicCropNutrition": [
+        {
+            "id": "OCN001",
+            "name": "Vermicompost",
+            "brand": "TrustBasket",
+            "price": 160,
+            "imageUrl": "https://trustbasket.com/vermicompost.png"
+        },
+        {
+            "id": "OCN002",
+            "name": "Seaweed Extract",
+            "brand": "Multiplex",
+            "price": 280,
+            "imageUrl": "https://multiplexgroup.com/seaweed.png"
+        },
+        {
+            "id": "OCN003",
+            "name": "Organic Manure",
+            "brand": "IFFCO",
+            "price": 250,
+            "imageUrl": "https://iffcogarden.com/manure.png"
+        },
+        {
+            "id": "OCN004",
+            "name": "Bio NPK",
+            "brand": "AgroLife",
+            "price": 300,
+            "imageUrl": "https://agrolife.com/bionpk.png"
+        },
+        {
+            "id": "OCN005",
+            "name": "Neem Cake Powder",
+            "brand": "Organic India",
+            "price": 200,
+            "imageUrl": "https://organicindia.com/neemcake.png"
+        },
+        {
+            "id": "OCN006",
+            "name": "Humic Acid",
+            "brand": "Multiplex",
+            "price": 240,
+            "imageUrl": "https://multiplexgroup.com/humic.png"
+        },
+        {
+            "id": "OCN007",
+            "name": "Bio Potash",
+            "brand": "VBT Organics",
+            "price": 320,
+            "imageUrl": "https://vbtofficial.com/biopotash.png"
+        },
+        {
+            "id": "OCN008",
+            "name": "Fish Amino Acid",
+            "brand": "Organic Garden",
+            "price": 350,
+            "imageUrl": "https://organicgarden.in/fishamino.png"
+        },
+        {
+            "id": "OCN009",
+            "name": "Liquid Organic NPK",
+            "brand": "Multiplex",
+            "price": 380,
+            "imageUrl": "https://multiplexgroup.com/liquidnpk.png"
+        },
+        {
+            "id": "OCN010",
+            "name": "SST Grow Booster",
+            "brand": "SST Organics",
+            "price": 320,
+            "imageUrl": "https://sstorganics.com/growbooster.png"
+        },
+        {
+            "id": "OCN011",
+            "name": "Tomato Special Organic",
+            "brand": "TrustBasket",
+            "price": 260,
+            "imageUrl": "https://trustbasket.com/tomatospecial.png"
+        },
+        {
+            "id": "OCN012",
+            "name": "Bio Phosphate",
+            "brand": "AgroLife",
+            "price": 280,
+            "imageUrl": "https://agrolife.com/biophosphate.png"
+        },
+        {
+            "id": "OCN013",
+            "name": "Organic Compost",
+            "brand": "Organic Garden",
+            "price": 190,
+            "imageUrl": "https://organicgarden.in/compost.png"
+        },
+        {
+            "id": "OCN014",
+            "name": "Plant Growth Promoter",
+            "brand": "Multiplex",
+            "price": 340,
+            "imageUrl": "https://multiplexgroup.com/pgr.png"
+        },
+        {
+            "id": "OCN015",
+            "name": "SST Micro Mix",
+            "brand": "SST Organics",
+            "price": 300,
+            "imageUrl": "https://sstorganics.com/micromix.png"
+        }
+    ],
+    "cattleFeed": [
+        {
+            "id": "CF001",
+            "name": "Amul Cattle Feed",
+            "brand": "Amul",
+            "price": 420,
+            "imageUrl": "https://amul.com/cattlefeed.png"
+        },
+        {
+            "id": "CF002",
+            "name": "Nandini Cattle Feed",
+            "brand": "Nandini",
+            "price": 400,
+            "imageUrl": "https://nandini.coop/cattlefeed.png"
+        },
+        {
+            "id": "CF003",
+            "name": "Suguna Elite Feed",
+            "brand": "Suguna",
+            "price": 520,
+            "imageUrl": "https://www.suguna.com/feed.png"
+        },
+        {
+            "id": "CF004",
+            "name": "Godrej Milkplus Feed",
+            "brand": "Godrej Agrovet",
+            "price": 450,
+            "imageUrl": "https://www.godrejagrovet.com/milkplus.png"
+        },
+        {
+            "id": "CF005",
+            "name": "IB Group Cattle Feed",
+            "brand": "IB Group",
+            "price": 430,
+            "imageUrl": "https://www.ibgroup.com/cattlefeed.png"
+        },
+        {
+            "id": "CF006",
+            "name": "Pashu Aahar",
+            "brand": "HAFED",
+            "price": 390,
+            "imageUrl": "https://hafed.gov.in/pashuaahar.png"
+        },
+        {
+            "id": "CF007",
+            "name": "Mehsana Feed",
+            "brand": "Mehsana Union",
+            "price": 410,
+            "imageUrl": "https://mehsanadugdh.com/feed.png"
+        },
+        {
+            "id": "CF008",
+            "name": "Kisan Feed",
+            "brand": "Kisan Agro",
+            "price": 380,
+            "imageUrl": "https://kisanagro.com/feed.png"
+        },
+        {
+            "id": "CF009",
+            "name": "Tara Milk Feed",
+            "brand": "Tara",
+            "price": 430,
+            "imageUrl": "https://taramilk.in/feed.png"
+        },
+        {
+            "id": "CF010",
+            "name": "Ananda Feed",
+            "brand": "Ananda",
+            "price": 420,
+            "imageUrl": "https://ananda.in/feed.png"
+        },
+        {
+            "id": "CF011",
+            "name": "Herbal Cattle Tonic",
+            "brand": "CattleCare",
+            "price": 220,
+            "imageUrl": "https://cattlecare.co.in/tonic.png"
+        },
+        {
+            "id": "CF012",
+            "name": "Cow Mineral Mix",
+            "brand": "Amul",
+            "price": 250,
+            "imageUrl": "https://amul.com/mineralmix.png"
+        },
+        {
+            "id": "CF013",
+            "name": "Milk Booster Feed",
+            "brand": "Godrej",
+            "price": 470,
+            "imageUrl": "https://godrejagrovet.com/milkbooster.png"
+        },
+        {
+            "id": "CF014",
+            "name": "Hi-Pro Dairy Feed",
+            "brand": "Suguna",
+            "price": 490,
+            "imageUrl": "https://suguna.com/hipro.png"
+        },
+        {
+            "id": "CF015",
+            "name": "Balanced Cattle Feed",
+            "brand": "IB Group",
+            "price": 440,
+            "imageUrl": "https://ibgroup.com/balancedfeed.png"
+        }
+    ],
+    "toolsAndMachinery": [
+        {
+            "id": "TM001",
+            "name": "Mahindra Yuvraj Tractor",
+            "brand": "Mahindra",
+            "price": 280000,
+            "imageUrl": "https://www.mahindratractor.com/yuvraj.png"
+        },
+        {
+            "id": "TM002",
+            "name": "John Deere 5050D Tractor",
+            "brand": "John Deere",
+            "price": 720000,
+            "imageUrl": "https://www.deere.co.in/5050d.png"
+        },
+        {
+            "id": "TM003",
+            "name": "KisanKraft Brush Cutter",
+            "brand": "KisanKraft",
+            "price": 8500,
+            "imageUrl": "https://www.kisankraft.com/brushcutter.png"
+        },
+        {
+            "id": "TM004",
+            "name": "Neptune Sprayer 16L",
+            "brand": "Neptune",
+            "price": 2200,
+            "imageUrl": "https://www.neptunesprayers.com/16L.png"
+        },
+        {
+            "id": "TM005",
+            "name": "Makita Chainsaw",
+            "brand": "Makita",
+            "price": 13500,
+            "imageUrl": "https://makita.in/chainsaw.png"
+        },
+        {
+            "id": "TM006",
+            "name": "Bosch Grass Trimmer",
+            "brand": "Bosch",
+            "price": 4800,
+            "imageUrl": "https://boschtools.com/grasstrimmer.png"
+        },
+        {
+            "id": "TM007",
+            "name": "Honda Water Pump",
+            "brand": "Honda",
+            "price": 15000,
+            "imageUrl": "https://honda.com/waterpump.png"
+        },
+        {
+            "id": "TM008",
+            "name": "Power Weeder",
+            "brand": "KisanKraft",
+            "price": 65000,
+            "imageUrl": "https://kisankraft.com/weeder.png"
+        },
+        {
+            "id": "TM009",
+            "name": "Tractor Rotavator",
+            "brand": "Shaktiman",
+            "price": 98000,
+            "imageUrl": "https://shaktimanagro.com/rotavator.png"
+        },
+        {
+            "id": "TM010",
+            "name": "Hand Hoe",
+            "brand": "Tata Agrico",
+            "price": 450,
+            "imageUrl": "https://tataagrico.com/hoe.png"
+        },
+        {
+            "id": "TM011",
+            "name": "Garden Rake",
+            "brand": "Tata Agrico",
+            "price": 350,
+            "imageUrl": "https://tataagrico.com/rake.png"
+        },
+        {
+            "id": "TM012",
+            "name": "Electric Sprayer",
+            "brand": "Neptune",
+            "price": 3800,
+            "imageUrl": "https://neptunesprayers.com/electric.png"
+        },
+        {
+            "id": "TM013",
+            "name": "Mini Tillers",
+            "brand": "Honda",
+            "price": 48000,
+            "imageUrl": "https://honda.com/minitiller.png"
+        },
+        {
+            "id": "TM014",
+            "name": "Agricultural Shovel",
+            "brand": "Tata Agrico",
+            "price": 520,
+            "imageUrl": "https://tataagrico.com/shovel.png"
+        },
+        {
+            "id": "TM015",
+            "name": "Brush Cutter 4-Stroke",
+            "brand": "Honda",
+            "price": 17000,
+            "imageUrl": "https://honda.com/brushcutter.png"
+        }
+    ]
+}

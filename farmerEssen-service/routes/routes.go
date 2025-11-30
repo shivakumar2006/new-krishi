@@ -1,0 +1,18 @@
+package routes
+
+import (
+	"farmerEssen-service/controllers"
+	"net/http"
+
+	"github.com/gorilla/mux"
+)
+
+func ProductRoutes() *mux.Router {
+	r := mux.NewRouter()
+
+	r.HandleFunc("/products", controllers.GetAllProducts).Methods(http.MethodGet)
+
+	r.HandleFunc("/products/category", controllers.GetProductsByCategory).Methods(http.MethodGet)
+
+	return r
+}

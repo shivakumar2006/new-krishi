@@ -17,6 +17,7 @@ import PricingSystem from './pages/PricingSystem';
 import UserStore from './pages/UserStore';
 import Profile from './pages/Profile';
 import ColdStorage from './pages/ColdStorage';
+import Product from './pages/Product';
 
 export default function App() {
   return (
@@ -37,6 +38,7 @@ export default function App() {
         <Route path='/farmer-user' element={<UserStore />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/cold-storage' element={<ColdStorage />} />
+        <Route path='/product' element={<Product />} />
       </Routes>
       <Footer />
     </>
