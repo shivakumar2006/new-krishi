@@ -6,6 +6,7 @@ import { weatherApi } from "./api/WeatherApi";
 import { PricingSystemApi } from "./api/PricingSystem";
 import { cropsApi } from "./api/CropsApi";
 import { vegetableApi } from "./api/VegetableApi";
+import { fruitsApi } from "./api/FruitsApi";
 
 export const store = configureStore({
   reducer: {
@@ -15,8 +16,9 @@ export const store = configureStore({
     [PricingSystemApi.reducerPath]: PricingSystemApi.reducer,
     [cropsApi.reducerPath]: cropsApi.reducer,
     [vegetableApi.reducerPath]: vegetableApi.reducer,
+    [fruitsApi.reducerPath]: fruitsApi.reducer,
   },
 
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(weatherApi.middleware, PricingSystemApi.middleware, cropsApi.middleware, vegetableApi.middleware),
+    getDefaultMiddleware().concat(weatherApi.middleware, PricingSystemApi.middleware, cropsApi.middleware, vegetableApi.middleware, fruitsApi.middleware),
 });

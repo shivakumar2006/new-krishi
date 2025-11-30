@@ -3,6 +3,7 @@ import CategorySelector from "../components/CategorySelector";
 
 import CropPage from "./CropPage";
 import VegetablesPage from "./VegetablePages";
+import FruitPage from "./FruitPage";
 
 const Store = () => {
     const [active, setActive] = useState("Crops");
@@ -17,7 +18,7 @@ const Store = () => {
 
             // 👇 Fruits & Pulses disable because not created yet
             case "Fruits":
-                return <div className="p-5 text-xl font-semibold">Fruits Coming Soon...</div>;
+                return <FruitPage />
 
             case "Pulses":
                 return <div className="p-5 text-xl font-semibold">Pulses Coming Soon...</div>;
