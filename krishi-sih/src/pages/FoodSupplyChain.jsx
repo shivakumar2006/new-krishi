@@ -65,7 +65,7 @@ export default function FoodSupplyChain() {
             <p className="text-sm text-gray-600">{t("logisticsDeliveryDesc")}</p>
           </div>
 
-          <div className="bg-white p-4 rounded shadow-sm">
+          <div onClick={() => Navigate("/cold-storage")} className="bg-white p-4 rounded shadow-sm cursor-pointer">
             <h3 className="font-semibold">{t("coldStorageSupport")}</h3>
             <p className="text-sm text-gray-600">{t("coldStorageSupportDesc")}</p>
           </div>

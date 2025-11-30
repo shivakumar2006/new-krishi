@@ -16,6 +16,7 @@ import BookingPage from './pages/Booking';
 import PricingSystem from './pages/PricingSystem';
 import UserStore from './pages/UserStore';
 import Profile from './pages/Profile';
+import ColdStorage from './pages/ColdStorage';
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="/pricing-system" element={<PricingSystem />} />
         <Route path='/farmer-user' element={<UserStore />} />
         <Route path='/profile' element={<Profile />} />
+        <Route path='/cold-storage' element={<ColdStorage />} />
       </Routes>
       <Footer />
     </>
