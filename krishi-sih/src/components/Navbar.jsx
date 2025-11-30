@@ -9,6 +9,8 @@ import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
   const cart = useSelector((state) => state.cart.cartItems);
+  const { user } = useSelector((state) => state.auth);
+
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
 
@@ -76,7 +78,13 @@ export default function Navbar() {
   const authLinks = (
     <div ref={authRef} className="relative">
       <button
-        onClick={() => setAuthOpen(!authOpen)}
+        onClick={() => {
+          if (user) {
+            navigate("/profile");
+          } else {
+            navigate("/login");
+          }
+        }}
         className="flex items-center cursor-pointer"
       >
         {/* avatar svg unchanged */}

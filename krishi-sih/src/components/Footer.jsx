@@ -1,13 +1,16 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
   const { t } = useTranslation();
 
+  const { user } = useSelector((state) => state.auth);
+
   return (
     <div>
       <section className="bg-yellow-50 p-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 
           {/* Left Column - Links */}
           <div>
@@ -20,8 +23,12 @@ const Footer = () => {
             </ul>
           </div>
 
+          <div className="w-100 h-15 border border-green-500 my-15 bg-white rounded-3xl flex justify-center items-center">
+            <p className="text-3xl font-bold">Hello {user?.first_name || "Guest"} {user?.last_name || "User"}!</p>
+          </div>
+
           {/* Right Column - Newsletter */}
-          <div>
+          <div className="ml-20">
             <h2 className="text-2xl font-bold mb-4 text-black">{t("newsletter")}</h2>
             <p className="mb-4 text-lg text-black">{t("newsletterDesc")}</p>
             <form className="flex flex-col sm:flex-row items-center gap-3">

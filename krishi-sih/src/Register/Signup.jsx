@@ -1,303 +1,242 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useSignupUserMutation } from "../store/api/JwtAuth";
 
 export default function Signup() {
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        phoneNumber: '',
-        agreeToTerms: false
-    })
+    const [signupUser, { isLoading }] = useSignupUserMutation();
 
-    const [errors, setErrors] = useState({})
+    const [formData, setFormData] = useState({
+        first_name: "",
+        last_name: "",
+        email: "",
+        password: "",
+        confirm_password: "",
+        phone: "",
+        role: "",
+        agreeToTerms: false,
+    });
+
+    const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
-        const { name, value, type, checked } = e.target
+        const { name, value, type, checked } = e.target;
         setFormData({
             ...formData,
-            [name]: type === 'checkbox' ? checked : value
-        })
+            [name]: type === "checkbox" ? checked : value,
+        });
 
-        // Clear specific error when user starts typing
         if (errors[name]) {
-            setErrors({
-                ...errors,
-                [name]: ''
-            })
+            setErrors({ ...errors, [name]: "" });
         }
-    }
+    };
 
     const validateForm = () => {
-        const newErrors = {}
+        const newErrors = {};
+        if (!formData.first_name.trim()) newErrors.first_name = "First name is required";
+        if (!formData.last_name.trim()) newErrors.last_name = "Last name is required";
+        if (!formData.email.trim()) newErrors.email = "Email is required";
+        else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Invalid email";
+        if (!formData.phone.trim()) newErrors.phone = "Phone is required";
+        if (!formData.role.trim()) newErrors.role = "Role is required";
+        if (!formData.password) newErrors.password = "Password is required";
+        else if (formData.password.length < 6)
+            newErrors.password = "Password must be at least 6 characters";
 
-        if (!formData.firstName.trim()) {
-            newErrors.firstName = 'First name is required'
-        }
+        if (formData.password !== formData.confirm_password)
+            newErrors.confirm_password = "Passwords do not match";
 
-        if (!formData.lastName.trim()) {
-            newErrors.lastName = 'Last name is required'
-        }
+        if (!formData.agreeToTerms)
+            newErrors.agreeToTerms = "You must accept terms";
 
-        if (!formData.email.trim()) {
-            newErrors.email = 'Email is required'
-        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-            newErrors.email = 'Email is invalid'
-        }
-
-        if (!formData.password) {
-            newErrors.password = 'Password is required'
-        } else if (formData.password.length < 6) {
-            newErrors.password = 'Password must be at least 6 characters'
-        }
-
-        if (formData.password !== formData.confirmPassword) {
-            newErrors.confirmPassword = 'Passwords do not match'
-        }
-
-        if (!formData.phoneNumber.trim()) {
-            newErrors.phoneNumber = 'Phone number is required'
-        }
-
-        if (!formData.agreeToTerms) {
-            newErrors.agreeToTerms = 'You must agree to the terms and conditions'
-        }
-
-        return newErrors
-    }
+        return newErrors;
+    };
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
-        const newErrors = validateForm()
-
-        if (Object.keys(newErrors).length === 0) {
-            try {
-                const res = await axios.post('http://localhost:5000/api/signup', formData)
-                alert('User registered successfully!')
-                // Optionally reset form here
-                setFormData({
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    password: '',
-                    confirmPassword: '',
-                    phoneNumber: '',
-                    agreeToTerms: false
-                })
-            } catch (err) {
-                alert('Signup failed. Please try again.')
-                console.error(err)
-            }
-        } else {
-            setErrors(newErrors)
+        const newErrors = validateForm();
+        if (Object.keys(newErrors).length !== 0) {
+            setErrors(newErrors);
+            return;
         }
-    }
+
+        try {
+            await signupUser(formData).unwrap();
+            alert("Signup successful!");
+
+            setFormData({
+                first_name: "",
+                last_name: "",
+                email: "",
+                password: "",
+                confirm_password: "",
+                phone: "",
+                role: "",
+                agreeToTerms: false,
+            });
+
+        } catch (err) {
+            alert("Signup failed: " + (err?.data?.error || "Unknown error"));
+        }
+    };
 
     return (
-        <div style={{ backgroundColor: '#F9F3E0', minHeight: '100vh' }}>
-            <div className="flex items-center justify-center min-h-screen px-6 py-8">
-                <div className="w-full max-w-md">
-                    {/* Header */}
-                    <div className="text-center mb-8">
-                        <h1 className="text-3xl font-bold text-black mb-2">Create Account</h1>
-                        <p className="text-gray-600">Join Krishi community today</p>
-                    </div>
+        <div className="bg-[#F9F3E0] min-h-screen flex justify-center items-center px-6 py-8">
+            <div className="w-full max-w-md">
 
-                    {/* Registration Form */}
-                    <div
-                        className="bg-white rounded-lg shadow-lg p-8"
-                        style={{
-                            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-                            borderRadius: '10px'
-                        }}
-                    >
-                        <form onSubmit={handleSubmit} className="space-y-4">
-                            {/* Name Fields */}
-                            <div className="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label htmlFor="firstName" className="block text-sm font-medium text-black mb-2">
-                                        First Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="firstName"
-                                        name="firstName"
-                                        value={formData.firstName}
-                                        onChange={handleChange}
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition duration-200"
-                                        placeholder="First name"
-                                        style={{ borderRadius: '8px', fontSize: '14px' }}
-                                    />
-                                    {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
-                                </div>
+                <div className="text-center mb-6">
+                    <h1 className="text-3xl font-bold text-black">Create Account</h1>
+                    <p className="text-gray-600">Join Krishi community today</p>
+                </div>
 
-                                <div>
-                                    <label htmlFor="lastName" className="block text-sm font-medium text-black mb-2">
-                                        Last Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="lastName"
-                                        name="lastName"
-                                        value={formData.lastName}
-                                        onChange={handleChange}
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition duration-200"
-                                        placeholder="Last name"
-                                        style={{ borderRadius: '8px', fontSize: '14px' }}
-                                    />
-                                    {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
-                                </div>
-                            </div>
+                <div className="bg-white rounded-xl shadow-md p-8">
 
-                            {/* Email Field */}
-                            <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
-                                    Email Address
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition duration-200"
-                                    placeholder="Enter your email"
-                                    style={{ borderRadius: '8px', fontSize: '14px' }}
-                                />
-                                {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
-                            </div>
+                    <form onSubmit={handleSubmit} className="space-y-4">
 
-                            {/* Phone Number Field */}
-                            <div>
-                                <label htmlFor="phoneNumber" className="block text-sm font-medium text-black mb-2">
-                                    Phone Number
-                                </label>
-                                <input
-                                    type="tel"
-                                    id="phoneNumber"
-                                    name="phoneNumber"
-                                    value={formData.phoneNumber}
-                                    onChange={handleChange}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition duration-200"
-                                    placeholder="Enter your phone number"
-                                    style={{ borderRadius: '8px', fontSize: '14px' }}
-                                />
-                                {errors.phoneNumber && <p className="text-red-500 text-xs mt-1">{errors.phoneNumber}</p>}
-                            </div>
+                        {/* Name Fields */}
+                        <div className="grid grid-cols-2 gap-4">
+                            <InputField
+                                label="First Name"
+                                name="first_name"
+                                placeholder="Enter first name"
+                                value={formData.first_name}
+                                onChange={handleChange}
+                                error={errors.first_name}
+                            />
 
-                            {/* Password Fields */}
-                            <div>
-                                <label htmlFor="password" className="block text-sm font-medium text-black mb-2">
-                                    Password
-                                </label>
-                                <input
-                                    type="password"
-                                    id="password"
-                                    name="password"
-                                    value={formData.password}
-                                    onChange={handleChange}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition duration-200"
-                                    placeholder="Create a password"
-                                    style={{ borderRadius: '8px', fontSize: '14px' }}
-                                />
-                                {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password}</p>}
-                            </div>
+                            <InputField
+                                label="Last Name"
+                                name="last_name"
+                                placeholder="Enter last name"
+                                value={formData.last_name}
+                                onChange={handleChange}
+                                error={errors.last_name}
+                            />
+                        </div>
 
-                            <div>
-                                <label htmlFor="confirmPassword" className="block text-sm font-medium text-black mb-2">
-                                    Confirm Password
-                                </label>
-                                <input
-                                    type="password"
-                                    id="confirmPassword"
-                                    name="confirmPassword"
-                                    value={formData.confirmPassword}
-                                    onChange={handleChange}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition duration-200"
-                                    placeholder="Confirm your password"
-                                    style={{ borderRadius: '8px', fontSize: '14px' }}
-                                />
-                                {errors.confirmPassword && <p className="text-red-500 text-xs mt-1">{errors.confirmPassword}</p>}
-                            </div>
+                        <InputField
+                            label="Email Address"
+                            name="email"
+                            type="email"
+                            placeholder="Enter your email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            error={errors.email}
+                        />
 
-                            <div>
-                                <label className="block text-sm font-medium text-black mb-2">
-                                    Role
-                                </label>
-                                <select onChange={handleChange} value={formData.role} name="role" id="role" className='w-full border-gray-300 px-3 border-1 h-10 rounded-lg'>
-                                    <option value="">Select Role</option>
-                                    <option value="farmer">Farmer</option>
-                                    <option value="customer">Customer</option>
-                                    <option value="driver">Driver</option>
-                                    <option value="admin">Admin</option>
-                                </select>
-                            </div>
+                        <InputField
+                            label="Phone Number"
+                            name="phone"
+                            placeholder="Enter phone number"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            error={errors.phone}
+                        />
 
-                            {/* Terms and Conditions */}
-                            <div className="flex items-start space-x-2">
-                                <input
-                                    type="checkbox"
-                                    id="agreeToTerms"
-                                    name="agreeToTerms"
-                                    checked={formData.agreeToTerms}
-                                    onChange={handleChange}
-                                    className="mt-1 h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
-                                />
-                                <label htmlFor="agreeToTerms" className="text-sm text-gray-600">
-                                    I agree to the{' '}
-                                    <Link to="/terms" className="text-green-600 hover:underline">
-                                        Terms and Conditions
-                                    </Link>{' '}
-                                    and{' '}
-                                    <Link to="/privacy" className="text-green-600 hover:underline">
-                                        Privacy Policy
-                                    </Link>
-                                </label>
-                            </div>
-                            {errors.agreeToTerms && <p className="text-red-500 text-xs">{errors.agreeToTerms}</p>}
-
-                            {/* Register Button */}
-                            <button
-                                type="submit"
-                                className="w-full text-white font-semibold py-3 px-4 rounded-lg transition duration-200 hover:opacity-90 mt-6"
-                                style={{
-                                    backgroundColor: '#205D21',
-                                    borderRadius: '8px',
-                                    fontSize: '16px'
-                                }}
+                        {/* Role Selection */}
+                        <div>
+                            <label className="block text-sm font-medium text-black mb-2">
+                                Select Role
+                            </label>
+                            <select
+                                name="role"
+                                value={formData.role}
+                                onChange={handleChange}
+                                className="w-full border px-3 py-2 rounded-lg outline-none focus:ring-2 focus:ring-green-600"
                             >
-                                Create Account
-                            </button>
-                        </form>
-
-                        {/* Divider */}
-                        <div className="mt-6 mb-6">
-                            <div className="relative">
-                                <div className="absolute inset-0 flex items-center">
-                                    <div className="w-full border-t border-gray-300"></div>
-                                </div>
-                                <div className="relative flex justify-center text-sm">
-                                    <span className="px-2 bg-white text-gray-500">OR</span>
-                                </div>
-                            </div>
+                                <option value="">Choose your role</option>
+                                <option value="farmer">Farmer</option>
+                                <option value="customer">Customer</option>
+                                <option value="driver">Driver</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                            {errors.role && (
+                                <p className="text-red-500 text-xs">{errors.role}</p>
+                            )}
                         </div>
 
-                        {/* Login Link */}
-                        <div className="text-center">
-                            <p className="text-gray-600">
-                                Already have an account?{' '}
-                                <Link to="/login" className="font-semibold hover:underline" style={{ color: '#009F1D' }}>
-                                    Sign In
-                                </Link>
-                            </p>
+                        <InputField
+                            label="Password"
+                            name="password"
+                            type="password"
+                            placeholder="Create a password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            error={errors.password}
+                        />
+
+                        <InputField
+                            label="Confirm Password"
+                            name="confirm_password"
+                            type="password"
+                            placeholder="Re-enter your password"
+                            value={formData.confirm_password}
+                            onChange={handleChange}
+                            error={errors.confirm_password}
+                        />
+
+                        {/* Terms */}
+                        <div className="flex items-start gap-2">
+                            <input
+                                type="checkbox"
+                                name="agreeToTerms"
+                                checked={formData.agreeToTerms}
+                                onChange={handleChange}
+                                className="mt-1 h-4 w-4"
+                            />
+                            <label className="text-sm text-gray-700">
+                                I agree to the{" "}
+                                <span className="text-green-700 font-semibold">
+                                    Terms & Conditions
+                                </span>
+                            </label>
                         </div>
+                        {errors.agreeToTerms && (
+                            <p className="text-red-500 text-xs">{errors.agreeToTerms}</p>
+                        )}
+
+                        <button
+                            type="submit"
+                            disabled={isLoading}
+                            className="w-full bg-[#205D21] text-white py-3 rounded-lg font-semibold text-lg hover:opacity-95 transition"
+                        >
+                            {isLoading ? "Creating..." : "Create Account"}
+                        </button>
+
+                    </form>
+
+                    <div className="flex items-center my-6">
+                        <div className="flex-grow h-px bg-gray-300"></div>
+                        <span className="px-2 text-gray-500">OR</span>
+                        <div className="flex-grow h-px bg-gray-300"></div>
                     </div>
+
+                    <p className="text-center text-gray-700">
+                        Already have an account?{" "}
+                        <Link to="/login" className="text-green-700 font-semibold">
+                            Sign In
+                        </Link>
+                    </p>
+
                 </div>
             </div>
         </div>
-    )
+    );
+}
+
+function InputField({ label, name, value, onChange, error, placeholder, type = "text" }) {
+    return (
+        <div>
+            <label className="block text-sm font-medium text-black mb-2">{label}</label>
+            <input
+                type={type}
+                name={name}
+                value={value}
+                placeholder={placeholder}
+                onChange={onChange}
+                className="w-full border border-gray-300 px-3 py-2 rounded-lg outline-none focus:ring-2 focus:ring-green-500"
+            />
+            {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
+        </div>
+    );
 }
