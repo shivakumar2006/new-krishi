@@ -4,6 +4,7 @@ import CategorySelector from "../components/CategorySelector";
 import CropPage from "./CropPage";
 import VegetablesPage from "./VegetablePages";
 import FruitPage from "./FruitPage";
+import PulsesPage from "./PulsesPage";
 
 const Store = () => {
     const [active, setActive] = useState("Crops");
@@ -21,7 +22,7 @@ const Store = () => {
                 return <FruitPage />
 
             case "Pulses":
-                return <div className="p-5 text-xl font-semibold">Pulses Coming Soon...</div>;
+                return <PulsesPage />
 
             default:
                 return <CropPage />;
