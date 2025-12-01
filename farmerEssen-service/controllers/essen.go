@@ -8,7 +8,9 @@ import (
 
 	"farmerEssen-service/models"
 
+	"github.com/gorilla/mux"
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
@@ -56,4 +58,29 @@ func GetProductsByCategory(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(products)
+}
+
+// GET PRODUCT BY ID
+func GetProductByID(w http.ResponseWriter, r *http.Request) {
+	id := mux.Vars(r)["id"] // URL se id
+	objID, err := primitive.ObjectIDFromHex(id)
+
+	if err != nil {
+		http.Error(w, "Invalid product ID", http.StatusBadRequest)
+		return
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	var product models.Product
+	err = ProductCollection.FindOne(ctx, bson.M{"_id": objID}).Decode(&product)
+
+	if err != nil {
+		http.Error(w, "Product not found", http.StatusNotFound)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(product)
 }

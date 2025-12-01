@@ -1,0 +1,960 @@
+{
+    "farmingVehicle": [
+        {
+            "_id": 1000,
+            "name": "Tractor",
+            "image": "",
+            "category": "Tractor",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1001,
+            "name": "Tractor",
+            "image": "",
+            "category": "Tractor",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1002,
+            "name": "Tractor",
+            "image": "",
+            "category": "Tractor",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1003,
+            "name": "Tractor",
+            "image": "",
+            "category": "Tractor",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1004,
+            "name": "Tractor",
+            "image": "",
+            "category": "Tractor",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1005,
+            "name": "ATQuad Bike",
+            "image": "",
+            "category": "ATQuad-Bike",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1006,
+            "name": "ATQuad Bike",
+            "image": "",
+            "category": "ATQuad-Bike",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1007,
+            "name": "ATQuad Bike",
+            "image": "",
+            "category": "ATQuad-Bike",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1008,
+            "name": "Baler Vehicle",
+            "image": "",
+            "category": "Baler-Vehicle",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1009,
+            "name": "Baler Vehicle",
+            "image": "",
+            "category": "Baler-Vehicle",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1010,
+            "name": "Baler Vehicle",
+            "image": "",
+            "category": "Baler-Vehicle",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1011,
+            "name": "Baler Vehicle",
+            "image": "",
+            "category": "Baler-Vehicle",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1012,
+            "name": "Baler Vehicle",
+            "image": "",
+            "category": "Baler-Vehicle",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1013,
+            "name": "Combine Harvester",
+            "image": "",
+            "category": "Combine-Harvester",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1014,
+            "name": "Combine Harvester",
+            "image": "",
+            "category": "Combine-Harvester",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1015,
+            "name": "Cultivator",
+            "image": "",
+            "category": "Cultivator",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1016,
+            "name": "Cultivator",
+            "image": "",
+            "category": "Cultivator",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1017,
+            "name": "Cultivator",
+            "image": "",
+            "category": "Cultivator",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1018,
+            "name": "Cultivator",
+            "image": "",
+            "category": "Cultivator",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1019,
+            "name": "Cultivator",
+            "image": "",
+            "category": "Cultivator",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1020,
+            "name": "Farm Trailer",
+            "image": "",
+            "category": "Farm Trailer",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1021,
+            "name": "Farm Trailer",
+            "image": "",
+            "category": "Field Preparation",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1022,
+            "name": "Farm Trailer",
+            "image": "",
+            "category": "Farm Trailer",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1023,
+            "name": "Farm Trailer",
+            "image": "",
+            "category": "Farm Trailer",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1024,
+            "name": "Mini Tractor",
+            "image": "",
+            "category": "Mini Tractor",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1025,
+            "name": "Mini Tractor",
+            "image": "",
+            "category": "Mini Tractor",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1026,
+            "name": "Mini Tractor",
+            "image": "",
+            "category": "Mini Tractor",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1027,
+            "name": "Mini Tractor",
+            "image": "",
+            "category": "Mini Tractor",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1028,
+            "name": "Power Tiller",
+            "image": "",
+            "category": "Power Tiller",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1029,
+            "name": "Power Tiller",
+            "image": "",
+            "category": "Power Tiller",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1030,
+            "name": "Rotavator",
+            "image": "",
+            "category": "Rotavator",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1031,
+            "name": "Rotavator",
+            "image": "",
+            "category": "Rotavator",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1032,
+            "name": "Rotavator",
+            "image": "",
+            "category": "Rotavator",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1033,
+            "name": "Rotavator",
+            "image": "",
+            "category": "Rotavator",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1034,
+            "name": "Rotavator",
+            "image": "",
+            "category": "Rotavator",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1035,
+            "name": "Seed Drill Machine",
+            "image": "",
+            "category": "Seed Drill Machine",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1036,
+            "name": "Seed Drill Machine",
+            "image": "",
+            "category": "Seed Drill Machine",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1037,
+            "name": "Seed Drill Machine",
+            "image": "",
+            "category": "Seed Drill Machine",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1038,
+            "name": "Seed Drill Machine",
+            "image": "",
+            "category": "Seed Drill Machine",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1039,
+            "name": "Sprayer Vehicle",
+            "image": "",
+            "category": "Sprayer Vehicle",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1040,
+            "name": "Sprayer Vehicle",
+            "image": "",
+            "category": "Sprayer Vehicle",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1041,
+            "name": "Sprayer Vehicle",
+            "image": "",
+            "category": "Sprayer Vehicle",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1042,
+            "name": "Sprayer Vehicle",
+            "image": "",
+            "category": "Sprayer Vehicle",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1043,
+            "name": "Sprayer Vehicle",
+            "image": "",
+            "category": "Sprayer Vehicle",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1044,
+            "name": "Sprayer Vehicle",
+            "image": "",
+            "category": "Sprayer Vehicle",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1045,
+            "name": "Sprayer Vehicle",
+            "image": "",
+            "category": "Sprayer Vehicle",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1046,
+            "name": "Sprayer Vehicle",
+            "image": "",
+            "category": "Sprayer Vehicle",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1047,
+            "name": "Sprayer Vehicle",
+            "image": "",
+            "category": "Sprayer Vehicle",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1048,
+            "name": "Water Tanker",
+            "image": "",
+            "category": "Water Tanker",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1049,
+            "name": "Water Tanker",
+            "image": "",
+            "category": "Water Tanker",
+            "rentalPricePerDay": 1500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        }
+    ],
+    "farmingEquipment": [
+        {
+            "_id": 1050,
+            "name": "Chaff Cutter",
+            "image": "",
+            "category": "Post-Harvest",
+            "rentalPricePerDay": 500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1051,
+            "name": "Chaff Cutter",
+            "image": "",
+            "category": "Post-Harvest",
+            "rentalPricePerDay": 500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1052,
+            "name": "Chaff Cutter",
+            "image": "",
+            "category": "Post-Harvest",
+            "rentalPricePerDay": 500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1053,
+            "name": "Chaff Cutter",
+            "image": "",
+            "category": "Post-Harvest",
+            "rentalPricePerDay": 500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1054,
+            "name": "Chaff Cutter",
+            "image": "",
+            "category": "Post-Harvest",
+            "rentalPricePerDay": 500,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1055,
+            "name": "Drip Irrigation System",
+            "image": "",
+            "category": "Irrigation",
+            "rentalPricePerDay": 300,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1056,
+            "name": "Drip Irrigation System",
+            "image": "",
+            "category": "Irrigation",
+            "rentalPricePerDay": 300,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1057,
+            "name": "Drip Irrigation System",
+            "image": "",
+            "category": "Irrigation",
+            "rentalPricePerDay": 300,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1058,
+            "name": "Drip Irrigation System",
+            "image": "",
+            "category": "Irrigation",
+            "rentalPricePerDay": 300,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1059,
+            "name": "Drip Irrigation System",
+            "image": "",
+            "category": "Irrigation",
+            "rentalPricePerDay": 300,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1060,
+            "name": "Fertilizer Spreader",
+            "image": "",
+            "category": "Fertilizing",
+            "rentalPricePerDay": 400,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1061,
+            "name": "Fertilizer Spreader",
+            "image": "",
+            "category": "Fertilizing",
+            "rentalPricePerDay": 400,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1062,
+            "name": "Fertilizer Spreader",
+            "image": "",
+            "category": "Fertilizing",
+            "rentalPricePerDay": 400,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1063,
+            "name": "Fertilizer Spreader",
+            "image": "",
+            "category": "Fertilizing",
+            "rentalPricePerDay": 400,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1064,
+            "name": "Fertilizer Spreader",
+            "image": "",
+            "category": "Fertilizing",
+            "rentalPricePerDay": 400,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1065,
+            "name": "Fertilizer Spreader",
+            "image": "",
+            "category": "Fertilizing",
+            "rentalPricePerDay": 400,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1066,
+            "name": "Harrow",
+            "image": "",
+            "category": "Harrowing",
+            "rentalPricePerDay": 200,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1067,
+            "name": "Harrow",
+            "image": "",
+            "category": "Harrowing",
+            "rentalPricePerDay": 200,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1068,
+            "name": "Harrow",
+            "image": "",
+            "category": "Harrowing",
+            "rentalPricePerDay": 200,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1069,
+            "name": "Harrow",
+            "image": "",
+            "category": "Harrowing",
+            "rentalPricePerDay": 200,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1070,
+            "name": "Leveller",
+            "image": "",
+            "category": "Leveling",
+            "rentalPricePerDay": 200,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1071,
+            "name": "Leveller",
+            "image": "",
+            "category": "Leveling",
+            "rentalPricePerDay": 200,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1072,
+            "name": "Leveller",
+            "image": "",
+            "category": "Leveling",
+            "rentalPricePerDay": 200,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1073,
+            "name": "Manure Spreader",
+            "image": "",
+            "category": "Spreding",
+            "rentalPricePerDay": 200,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1074,
+            "name": "Manure Spreader",
+            "image": "",
+            "category": "Spreding",
+            "rentalPricePerDay": 200,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1075,
+            "name": "Manure Spreader",
+            "image": "",
+            "category": "Spreding",
+            "rentalPricePerDay": 200,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1076,
+            "name": "Mulcher",
+            "image": "",
+            "category": "Mulching",
+            "rentalPricePerDay": 250,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1077,
+            "name": "Mulcher",
+            "image": "",
+            "category": "Mulching",
+            "rentalPricePerDay": 250,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1078,
+            "name": "Plough Plow",
+            "image": "",
+            "category": "Ploughing",
+            "rentalPricePerDay": 150,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1079,
+            "name": "Plough Plow",
+            "image": "",
+            "category": "Ploughing",
+            "rentalPricePerDay": 150,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1080,
+            "name": "Plough Plow",
+            "image": "",
+            "category": "Ploughing",
+            "rentalPricePerDay": 150,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1081,
+            "name": "Plough Plow",
+            "image": "",
+            "category": "Ploughing",
+            "rentalPricePerDay": 150,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1082,
+            "name": "Post Hole Digger",
+            "image": "",
+            "category": "Digging",
+            "rentalPricePerDay": 180,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1083,
+            "name": "Post Hole Digger",
+            "image": "",
+            "category": "Digging",
+            "rentalPricePerDay": 180,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1084,
+            "name": "Post Hole Digger",
+            "image": "",
+            "category": "Digging",
+            "rentalPricePerDay": 180,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1085,
+            "name": "Post Hole Digger",
+            "image": "",
+            "category": "Digging",
+            "rentalPricePerDay": 180,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1086,
+            "name": "Reaper",
+            "image": "",
+            "category": "Reaping",
+            "rentalPricePerDay": 200,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1087,
+            "name": "Reaper",
+            "image": "",
+            "category": "Reaping",
+            "rentalPricePerDay": 200,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1088,
+            "name": "Seed Planter",
+            "image": "",
+            "category": "sowing",
+            "rentalPricePerDay": 220,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1089,
+            "name": "Seed Planter",
+            "image": "",
+            "category": "sowing",
+            "rentalPricePerDay": 220,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1090,
+            "name": "Seed Planter",
+            "image": "",
+            "category": "sowing",
+            "rentalPricePerDay": 220,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1091,
+            "name": "Seed Planter",
+            "image": "",
+            "category": "sowing",
+            "rentalPricePerDay": 220,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1092,
+            "name": "Solar Dryer",
+            "image": "",
+            "category": "Preservation",
+            "rentalPricePerDay": 220,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1093,
+            "name": "Solar Dryer",
+            "image": "",
+            "category": "Preservation",
+            "rentalPricePerDay": 220,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1094,
+            "name": "Solar Dryer",
+            "image": "",
+            "category": "Preservation",
+            "rentalPricePerDay": 220,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1095,
+            "name": "Sprinkler Irrigation",
+            "image": "",
+            "category": "Watering",
+            "rentalPricePerDay": 220,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1096,
+            "name": "Sprinkler Irrigation",
+            "image": "",
+            "category": "Watering",
+            "rentalPricePerDay": 220,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1097,
+            "name": "Sprinkler Irrigation",
+            "image": "",
+            "category": "Watering",
+            "rentalPricePerDay": 220,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1098,
+            "name": "Sprinkler Irrigation",
+            "image": "",
+            "category": "Watering",
+            "rentalPricePerDay": 220,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1099,
+            "name": "Threshing Machine",
+            "image": "",
+            "category": "Threshing",
+            "rentalPricePerDay": 600,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1100,
+            "name": "Threshing Machine",
+            "image": "",
+            "category": "Threshing",
+            "rentalPricePerDay": 600,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1101,
+            "name": "Threshing Machine",
+            "image": "",
+            "category": "Threshing",
+            "rentalPricePerDay": 600,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1102,
+            "name": "Threshing Machine",
+            "image": "",
+            "category": "Threshing",
+            "rentalPricePerDay": 600,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1103,
+            "name": "Weeder Manual",
+            "image": "",
+            "category": "Weeding",
+            "rentalPricePerDay": 100,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1104,
+            "name": "Weeder",
+            "image": "",
+            "category": "Weeding",
+            "rentalPricePerDay": 150,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        },
+        {
+            "_id": 1105,
+            "name": "Weeder",
+            "image": "",
+            "category": "Weeding",
+            "rentalPricePerDay": 150,
+            "availability": true,
+            "provider": "Farmer's Co-op"
+        }
+    ]
+}

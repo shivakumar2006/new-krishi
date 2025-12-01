@@ -11,6 +11,10 @@ import tractorImg from "../assets/tractorImg.png";
 import harvesterImg from "../assets/harvesterImg.png";
 import pumpImg from "../assets/pumpImg.png";
 import seedDrillImg from "../assets/seedDrillImg.png";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useGetAllRentalsQuery, useGetRentalsByCategoryQuery } from "../store/api/RentalsApi";
+
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -23,6 +27,7 @@ import { useTranslation } from "react-i18next";
 
 const BookingPage = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const itemRef = useRef(null);
 
@@ -32,17 +37,35 @@ const BookingPage = () => {
 
   const toolsForRent = [...farmingVehicle, ...farmingEquipment];
 
-  const categories = ["All", ...new Set(toolsForRent.map((tool) => tool.category))];
+  // const categories = ["All", ...new Set(toolsForRent.map((tool) => tool.category))];
 
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const filteredTools = toolsForRent.filter((tool) => {
-    const matchesCategory =
-      selectedCategory === "All" || tool.category === selectedCategory;
-    const matchesSearch = tool.name.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  // Get all rentals
+  const { data: allData, isLoading: loadingAll } = useGetAllRentalsQuery();
+
+  // Get category specific rentals
+  const { data: categoryData, isLoading: loadingCategory } =
+    useGetRentalsByCategoryQuery(selectedCategory, { skip: selectedCategory === "All" });
+
+  // Choose the correct data
+  const rentals = selectedCategory === "All" ? allData : categoryData;
+
+  const categories = ["All", ...new Set((allData || []).map((item) => item.category))];
+
+  const filteredTools = (rentals || []).filter((tool) =>
+    tool.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+
+
+  // const filteredTools = toolsForRent.filter((tool) => {
+  //   const matchesCategory =
+  //     selectedCategory === "All" || tool.category === selectedCategory;
+  //   const matchesSearch = tool.name.toLowerCase().includes(searchQuery.toLowerCase());
+  //   return matchesCategory && matchesSearch;
+  // });
 
   const suggestions = [
     {
@@ -211,8 +234,10 @@ const BookingPage = () => {
 
       <div ref={itemRef} className="min-h-screen bg-[#F9F3E0] font-sans">
 
+        {/* Search + Category */}
         <div className="px-6 py-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
 
+          {/* Search */}
           <div className="relative w-full sm:w-1/2">
             <input
               type="text"
@@ -232,43 +257,47 @@ const BookingPage = () => {
             </div>
           </div>
 
-          <select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className="px-4 py-2 rounded-full shadow-md bg-white border border-gray-300 text-gray-700 focus:outline-none"
-          >
-            {categories.map((cat) => (
-              <option key={cat} value={cat}>
-                {cat}
-              </option>
-            ))}
-          </select>
+          {/* Category Selector */}
+          <div className="relative">
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="px-5 py-2 rounded-full shadow-md bg-white border border-gray-300 text-gray-700 focus:ring-2 focus:ring-green-500 focus:outline-none cursor-pointer appearance-none"
+            >
+              {categories.map((cat) => (
+                <option key={cat} value={cat}>
+                  {cat}
+                </option>
+              ))}
+            </select>
+
+            <div className="absolute right-4 top-1/2 -translate-y-1/2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 10l5 5 5-5"
+                  stroke="#555"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
 
+        {/* Cards */}
         <div className="px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
           {filteredTools.map((tool) => (
             <div
               key={tool._id}
               className="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition"
             >
-
               <div className="relative">
                 <img
                   src={tool.image}
                   alt={tool.name}
                   className="w-full h-48 object-cover rounded-md"
                 />
-                <div className="absolute top-3 right-3 bg-white p-1 rounded-full shadow">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path
-                      d="M15.6301 3.4575C15.247 3.07425 14.7922 2.77023 14.2916 2.56281C13.791 2.35539 13.2545 2.24863 12.7126 2.24863C12.1707 2.24863 11.6342 2.35539 11.1336 2.56281C10.633 2.77023 10.1782 3.07425 9.79509 3.4575L9.00009 4.2525L8.20509 3.4575C7.43132 2.68373 6.38186 2.24903 5.28759 2.24903C4.19331 2.24903 3.14386 2.68373 2.37009 3.4575C1.59632 4.23127 1.16162 5.28072 1.16162 6.375C1.16162 7.46927 1.59632 8.51873 2.37009 9.2925L9.00009 15.9225L15.6301 9.2925C16.0133 8.90943 16.3174 8.45461 16.5248 7.95401C16.7322 7.45342 16.839 6.91686 16.839 6.375C16.839 5.83313 16.7322 5.29657 16.5248 4.79598C16.3174 4.29539 16.0133 3.84056 15.6301 3.4575Z"
-                      stroke="#1E1E1E"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
               </div>
 
               <h3 className="text-black font-semibold text-lg mt-4">{tool.name}</h3>
@@ -289,15 +318,16 @@ const BookingPage = () => {
                 </span>
               </div>
 
-              <button
-                disabled={!tool.availability}
-                className={`mt-4 w-full py-2 text-sm font-semibold rounded-full transition ${tool.availability
+              <Link
+                to={`/rent/${tool.id}`}   // id ki jagah id, _id nahi
+                className={`mt-4 w-full block text-center py-2 text-sm font-semibold rounded-full transition ${tool.availability
                   ? "bg-green-800 text-white hover:bg-green-700"
                   : "bg-gray-400 text-gray-200 cursor-not-allowed"
                   }`}
               >
                 {t("rentNow")}
-              </button>
+              </Link>
+
 
             </div>
           ))}

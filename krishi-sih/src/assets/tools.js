@@ -191,7 +191,7 @@ export const farmingVehicle = [
 ];
 
 // Farming EQUIPMENTS
-export const farmingEquipment =[
+export const farmingEquipment = [
   { _id: 1050, name: "Chaff Cutter", image: chaffcutter, category: "Post-Harvest", rentalPricePerDay: 500, availability: true, provider: "Farmer's Co-op" },
   { _id: 1051, name: "Chaff Cutter", image: chaffcutter2, category: "Post-Harvest", rentalPricePerDay: 500, availability: true, provider: "Farmer's Co-op" },
   { _id: 1052, name: "Chaff Cutter", image: chaffcutter3, category: "Post-Harvest", rentalPricePerDay: 500, availability: true, provider: "Farmer's Co-op" },

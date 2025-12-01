@@ -12,6 +12,8 @@ import { JwtAuth } from "./api/JwtAuth";
 import authReducer from "./authSlice";
 import { coldStorageApi } from "./api/ColdStorageApi";
 import { productApi } from "./api/ProductApi";
+import { rentalsApi } from "./api/RentalsApi";
+import { paymentApi } from "./api/PaymentApi";
 
 export const store = configureStore({
   reducer: {
@@ -27,8 +29,10 @@ export const store = configureStore({
     [JwtAuth.reducerPath]: JwtAuth.reducer,
     [coldStorageApi.reducerPath]: coldStorageApi.reducer,
     [productApi.reducerPath]: productApi.reducer,
+    [rentalsApi.reducerPath]: rentalsApi.reducer,
+    [paymentApi.reducerPath]: paymentApi.reducer,
   },
 
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(weatherApi.middleware, PricingSystemApi.middleware, cropsApi.middleware, vegetableApi.middleware, fruitsApi.middleware, pulsesApi.middleware, JwtAuth.middleware, coldStorageApi.middleware, productApi.middleware),
+    getDefaultMiddleware().concat(weatherApi.middleware, PricingSystemApi.middleware, cropsApi.middleware, vegetableApi.middleware, fruitsApi.middleware, pulsesApi.middleware, JwtAuth.middleware, coldStorageApi.middleware, productApi.middleware, rentalsApi.middleware, paymentApi.middleware),
 });

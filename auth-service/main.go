@@ -4,17 +4,23 @@ import (
 	"context"
 	"log"
 	"net/http"
+	"os"
 	"time"
 
 	"auth-service/controllers"
 	"auth-service/routes"
 
 	"github.com/gorilla/handlers"
+	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 func main() {
+	godotenv.Load()
+
+	controllers.JwtKey = []byte(os.Getenv("JWT_SECRET"))
+
 	mongoURI := "mongodb://localhost:27017"
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()

@@ -18,6 +18,10 @@ import UserStore from './pages/UserStore';
 import Profile from './pages/Profile';
 import ColdStorage from './pages/ColdStorage';
 import Product from './pages/Product';
+import RentVehicle from './pages/RentVehicle';
+import SelectPartner from './pages/SelectPartner';
+import ConfirmRide from './pages/ConfirmRide';
+import RideSuccess from './pages/RideSuccess';
 
 export default function App() {
   return (
@@ -39,6 +43,11 @@ export default function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/cold-storage' element={<ColdStorage />} />
         <Route path='/product' element={<Product />} />
+        <Route path="/rent/:id" element={<RentVehicle />} />
+        <Route path="/select-partner" element={<SelectPartner />} />
+        <Route path="/confirm-ride" element={<ConfirmRide />} />
+        <Route path="/payment-success" element={<RideSuccess />} />
+
       </Routes>
       <Footer />
     </>

@@ -18,7 +18,7 @@ import (
 
 var UserCollection *mongo.Collection
 
-var JwtKey = []byte("JWT_SECRET")
+var JwtKey []byte
 
 type SignupReq struct {
 	FirstName       string `json:"first_name"`
