@@ -43,9 +43,18 @@ const Profile = () => {
             </div>
 
             <div className="w-full mt-10 justify-center items-center flex flex-row">
-                <button onClick={() => navigate("/payment-success")} className="bg-green-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition">
-                    Check success
+                <button
+                    onClick={() => {
+                        const id = localStorage.getItem("last_session_id");
+                        if (!id) return alert("No previous successful booking found.");
+
+                        navigate(`/payment-success?session_id=${id}`);
+                    }}
+                    className="bg-green-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition"
+                >
+                    Check Last Booking
                 </button>
+
             </div>
         </div>
     );

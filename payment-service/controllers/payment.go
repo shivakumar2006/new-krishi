@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 
 	"payment-service/models"
@@ -102,6 +103,8 @@ func (pc *PaymentController) CreateCheckoutSession(w http.ResponseWriter, r *htt
 		})
 	}
 
+	rData := body.RideData
+
 	params := &stripe.CheckoutSessionParams{
 		PaymentMethodTypes: stripe.StringSlice([]string{"card"}),
 		LineItems:          lineItems,
@@ -109,7 +112,14 @@ func (pc *PaymentController) CreateCheckoutSession(w http.ResponseWriter, r *htt
 		SuccessURL:         stripe.String("http://localhost:5173/payment-success?session_id={CHECKOUT_SESSION_ID}"),
 		CancelURL:          stripe.String("http://localhost:5173/payment-cancel"),
 		Metadata: map[string]string{
-			"userId": userId,
+			"userId":          userId,
+			"vehicleName":     rData.VehicleName,
+			"vehicleCategory": rData.VehicleCategory,
+			"pickup":          rData.Pickup,
+			"destination":     rData.Destination,
+			"days":            strconv.Itoa(rData.Days),
+			"partnerName":     rData.PartnerName,
+			"totalFare":       strconv.Itoa(rData.TotalFare),
 		},
 	}
 
