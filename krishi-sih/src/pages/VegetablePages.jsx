@@ -25,6 +25,8 @@ const VegetablesPage = () => {
     });
     const [addToCart] = useAddToCartMutation();
 
+    console.log(allData);
+
     // GET BY CATEGORY
     const categoryData = useGetVegetablesByCategoryQuery(selectedCategory, {
         skip: selectedCategory === "All",
@@ -90,7 +92,7 @@ const VegetablesPage = () => {
                     >
                         <div className="h-44 bg-gray-200 rounded-md mb-2">
                             <img
-                                src={veg.image}
+                                src={`http://localhost:8001/images/${veg.image}`}
                                 alt={veg.name}
                                 className="w-full h-full object-cover rounded-md"
                             />

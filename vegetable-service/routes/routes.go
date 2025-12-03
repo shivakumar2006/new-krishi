@@ -10,4 +10,6 @@ func VegetableRoutes(controller *controllers.VegetableController, mux *http.Serv
 	mux.HandleFunc("/vegetable", controller.GetVegetableById)
 	mux.HandleFunc("/vegetables/category", controller.GetVegetablesByCategory)
 	mux.HandleFunc("/vegetables/seed", controller.SeedVegetables)
+
+	mux.Handle("/images/", http.StripPrefix("/images/", http.FileServer(http.Dir("data"))))
 }

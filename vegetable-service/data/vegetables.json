@@ -2,7 +2,7 @@
     {
         "_id": 25,
         "name": "Spinach",
-        "image": "spinach.jpg",
+        "image": "spinach.avif",
         "category": "Leafy Vegetable",
         "soilType": "Loamy",
         "season": "Rabi",
@@ -12,7 +12,7 @@
     {
         "_id": 26,
         "name": "Lettuce",
-        "image": "lettuce.jpg",
+        "image": "lettuce.avif",
         "category": "Leafy Vegetable",
         "soilType": "Sandy Loam",
         "season": "Rabi",
@@ -22,7 +22,7 @@
     {
         "_id": 27,
         "name": "Kale",
-        "image": "kale.jpg",
+        "image": "kale.avif",
         "category": "Leafy Vegetable",
         "soilType": "Loamy",
         "season": "Rabi",
@@ -32,7 +32,7 @@
     {
         "_id": 28,
         "name": "Fenugreek (Methi)",
-        "image": "methi.jpg",
+        "image": "methi.avif",
         "category": "Leafy Vegetable",
         "soilType": "Loamy",
         "season": "Kharif",
@@ -42,7 +42,7 @@
     {
         "_id": 29,
         "name": "Amaranth leaves (Chaulai)",
-        "image": "chaulai.jpg",
+        "image": "chaulai.avif",
         "category": "Leafy Vegetable",
         "soilType": "Loamy",
         "season": "Kharif",
@@ -52,7 +52,7 @@
     {
         "_id": 30,
         "name": "Mustard greens (Sarson)",
-        "image": "sarson.jpg",
+        "image": "mustard.avif",
         "category": "Leafy Vegetable",
         "soilType": "Loamy",
         "season": "Rabi",
@@ -62,7 +62,7 @@
     {
         "_id": 31,
         "name": "Coriander leaves (Cilantro)",
-        "image": "coriander.jpg",
+        "image": "coriander.avif",
         "category": "Leafy Vegetable",
         "soilType": "Sandy Loam",
         "season": "Rabi",
@@ -72,7 +72,7 @@
     {
         "_id": 32,
         "name": "Curry leaves",
-        "image": "curry-leaves.jpg",
+        "image": "curry.avif",
         "category": "Leafy Vegetable",
         "soilType": "Sandy Loam",
         "season": "Rabi",
@@ -82,7 +82,7 @@
     {
         "_id": 33,
         "name": "Beet greens",
-        "image": "beet-greens.jpg",
+        "image": "beet-greens.avif",
         "category": "Leafy Vegetable",
         "soilType": "Sandy Loam",
         "season": "Rabi",
@@ -92,7 +92,7 @@
     {
         "_id": 34,
         "name": "Carrot",
-        "image": "carrot.jpg",
+        "image": "carrot.avif",
         "category": "Root Vegetable",
         "soilType": "Sandy Loam",
         "season": "Rabi",
@@ -102,7 +102,7 @@
     {
         "_id": 35,
         "name": "Beetroot",
-        "image": "beetroot.jpg",
+        "image": "beetroot.avif",
         "category": "Root Vegetable",
         "soilType": "Sandy Loam",
         "season": "Kharif",
@@ -112,7 +112,7 @@
     {
         "_id": 36,
         "name": "Radish",
-        "image": "radish.jpg",
+        "image": "radish.avif",
         "category": "Root Vegetable",
         "soilType": "Sandy Loam",
         "season": "Rabi",
@@ -122,7 +122,7 @@
     {
         "_id": 37,
         "name": "Turnip",
-        "image": "turnip.jpg",
+        "image": "turnip.avif",
         "category": "Root Vegetable",
         "soilType": "Loamy",
         "season": "Rabi",
@@ -132,7 +132,7 @@
     {
         "_id": 38,
         "name": "Sweet potato",
-        "image": "sweet-potato.jpg",
+        "image": "sweet.avif",
         "category": "Root Vegetable",
         "soilType": "Sandy Loam",
         "season": "Kharif",
@@ -142,7 +142,7 @@
     {
         "_id": 39,
         "name": "Yam",
-        "image": "yam.jpg",
+        "image": "sweet.avif",
         "category": "Root Vegetable",
         "soilType": "Sandy Loam",
         "season": "Kharif",
@@ -152,7 +152,7 @@
     {
         "_id": 40,
         "name": "Taro (Arbi)",
-        "image": "arbi.jpg",
+        "image": "taro.avif",
         "category": "Root Vegetable",
         "soilType": "Clay Loam",
         "season": "Kharif",
@@ -172,7 +172,7 @@
     {
         "_id": 42,
         "name": "Onion",
-        "image": "onion.jpg",
+        "image": "onion.avif",
         "category": "Bulb Vegetable",
         "soilType": "Loamy",
         "season": "Rabi",
@@ -182,7 +182,7 @@
     {
         "_id": 43,
         "name": "Garlic",
-        "image": "garlic.jpg",
+        "image": "garlic.avif",
         "category": "Bulb Vegetable",
         "soilType": "Loamy",
         "season": "Rabi",
@@ -192,7 +192,7 @@
     {
         "_id": 44,
         "name": "Shallot",
-        "image": "shallot.jpg",
+        "image": "shallot.avif",
         "category": "Bulb Vegetable",
         "soilType": "Sandy Loam",
         "season": "Rabi",
@@ -202,7 +202,7 @@
     {
         "_id": 45,
         "name": "Brinjal (Eggplant)",
-        "image": "brinjal.jpg",
+        "image": "brinjal.avif",
         "category": "Fruit Vegetable",
         "soilType": "Loamy",
         "season": "Kharif",
@@ -212,7 +212,7 @@
     {
         "_id": 46,
         "name": "Tomato",
-        "image": "tomato.jpg",
+        "image": "tomato.avif",
         "category": "Fruit Vegetable",
         "soilType": "Sandy Loam",
         "season": "Rabi",
@@ -222,7 +222,7 @@
     {
         "_id": 47,
         "name": "Cucumber",
-        "image": "cucumber.jpg",
+        "image": "cucumber.avif",
         "category": "Fruit Vegetable",
         "soilType": "Sandy Loam",
         "season": "Kharif",
@@ -232,7 +232,7 @@
     {
         "_id": 48,
         "name": "Capsicum",
-        "image": "capsicum.jpg",
+        "image": "capsicum.avif",
         "category": "Fruit Vegetable",
         "soilType": "Loamy",
         "season": "Rabi",
@@ -242,7 +242,7 @@
     {
         "_id": 49,
         "name": "Pumpkin",
-        "image": "pumpkin.jpg",
+        "image": "pumpkin.avif",
         "category": "Fruit Vegetable",
         "soilType": "Loamy",
         "season": "Kharif",
@@ -282,7 +282,7 @@
     {
         "_id": 53,
         "name": "Turai (Ridge Gourd)",
-        "image": "ridge-gourd.jpg",
+        "image": "turai.avif",
         "category": "Fruit Vegetable",
         "soilType": "Loamy",
         "season": "Kharif",
@@ -292,7 +292,7 @@
     {
         "_id": 54,
         "name": "Zucchini",
-        "image": "zucchini.jpg",
+        "image": "zucchini.avif",
         "category": "Fruit Vegetable",
         "soilType": "Loamy",
         "season": "Kharif",
@@ -302,7 +302,7 @@
     {
         "_id": 55,
         "name": "Broccoli",
-        "image": "broccoli.jpg",
+        "image": "broccoli.avif",
         "category": "Cabbage Family",
         "soilType": "Loamy",
         "season": "Rabi",
@@ -312,7 +312,7 @@
     {
         "_id": 56,
         "name": "Cabbage",
-        "image": "cabbage.jpg",
+        "image": "cabbage.avif",
         "category": "Cabbage Family",
         "soilType": "Loamy",
         "season": "Rabi",
@@ -322,7 +322,7 @@
     {
         "_id": 57,
         "name": "Cauliflower",
-        "image": "cauliflower.jpg",
+        "image": "cauliflower.avif",
         "category": "Cabbage Family",
         "soilType": "Loamy",
         "season": "Rabi",
@@ -332,7 +332,7 @@
     {
         "_id": 58,
         "name": "Brussels Sprouts",
-        "image": "brussels-sprouts.jpg",
+        "image": "sprouts.avif",
         "category": "Cabbage Family",
         "soilType": "Loamy",
         "season": "Rabi",
@@ -342,7 +342,7 @@
     {
         "_id": 59,
         "name": "Bok Choy",
-        "image": "bokchoy.jpg",
+        "image": "bokchoy.avif",
         "category": "Cabbage Family",
         "soilType": "Loamy",
         "season": "Rabi",
@@ -352,7 +352,7 @@
     {
         "_id": 60,
         "name": "French Beans",
-        "image": "french-beans.jpg",
+        "image": "french.avif",
         "category": "Pod & Seed Vegetable",
         "soilType": "Loamy",
         "season": "Kharif",
@@ -362,7 +362,7 @@
     {
         "_id": 61,
         "name": "Broad Beans",
-        "image": "broad-beans.jpg",
+        "image": "broad-beans.avif",
         "category": "Pod & Seed Vegetable",
         "soilType": "Loamy",
         "season": "Rabi",
@@ -372,7 +372,7 @@
     {
         "_id": 62,
         "name": "Green Peas",
-        "image": "green-peas.jpg",
+        "image": "green-peas.avif",
         "category": "Pod & Seed Vegetable",
         "soilType": "Loamy",
         "season": "Rabi",
@@ -382,7 +382,7 @@
     {
         "_id": 63,
         "name": "Jackfruit",
-        "image": "jackfruit.jpg",
+        "image": "jackfruit.avif",
         "category": "Regional/Exotic",
         "soilType": "Loamy",
         "season": "Kharif",
@@ -392,7 +392,7 @@
     {
         "_id": 64,
         "name": "Jerusalem Artichoke",
-        "image": "jerusalem-artichoke.jpg",
+        "image": "jerusalem.avif",
         "category": "Regional/Exotic",
         "soilType": "Loamy",
         "season": "Kharif",
@@ -402,7 +402,7 @@
     {
         "_id": 65,
         "name": "Asparagus",
-        "image": "asparagus.jpg",
+        "image": "asparagus.avif",
         "category": "Regional/Exotic",
         "soilType": "Loamy",
         "season": "Rabi",
