@@ -3,6 +3,7 @@ import {
     useGetAllProductsQuery,
     useGetAllProductsByCategoryQuery,
 } from "../store/api/ProductApi";
+import { useAddToCartMutation } from "../store/api/CartApi";
 
 const categories = [
     "pesticides",
@@ -24,6 +25,7 @@ const Product = () => {
     } = useGetAllProductsByCategoryQuery(selectedCategory, {
         skip: selectedCategory === "all",
     });
+    const [addToCart] = useAddToCartMutation();
 
     const products =
         selectedCategory === "all" ? allProducts : categoryProducts;
@@ -33,6 +35,29 @@ const Product = () => {
 
     if (loading)
         return <p className="text-gray-500 text-center">Loading products...</p>;
+
+    const handleAddToCart = (product) => {
+        const item = {
+            itemId: product.id.toString(),
+            service: "essential",
+            name: product.name,
+            price: product.price,
+            image: product.imageUrl,
+            category: product.category,
+            quantity: 1
+        }
+
+
+        addToCart(item)
+            .unwrap()
+            .then(() => {
+                alert("Added to cart!");
+            })
+            .catch((err) => {
+                console.error(err);
+                alert("Failed to add to cart");
+            });
+    };
 
     return (
         <div className="px-6 py-8">
@@ -97,7 +122,10 @@ const Product = () => {
                         </p>
 
                         {/* ADD TO CART */}
-                        <button className="w-full h-10 mt-3 rounded-lg bg-green-600 text-white hover:bg-green-700 transition">
+                        <button
+                            onClick={() => handleAddToCart(product)}
+                            className="w-full h-10 mt-3 rounded-lg bg-green-600 text-white hover:bg-green-700 transition cursor-pointer"
+                        >
                             Add to Cart
                         </button>
                     </div>

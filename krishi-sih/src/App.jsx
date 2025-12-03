@@ -16,12 +16,14 @@ import BookingPage from './pages/Booking';
 import PricingSystem from './pages/PricingSystem';
 import UserStore from './pages/UserStore';
 import Profile from './pages/Profile';
-import ColdStorage from './pages/ColdStorage';
 import Product from './pages/Product';
 import RentVehicle from './pages/RentVehicle';
 import SelectPartner from './pages/SelectPartner';
 import ConfirmRide from './pages/ConfirmRide';
 import RideSuccess from './pages/RideSuccess';
+import CheckoutPage from './pages/CheckoutPage';
+import CartSuccess from './pages/CartSuccess';
+import ColdStoragePage from './pages/ColdStoragePage';
 
 export default function App() {
   return (
@@ -41,13 +43,14 @@ export default function App() {
         <Route path="/pricing-system" element={<PricingSystem />} />
         <Route path='/farmer-user' element={<UserStore />} />
         <Route path='/profile' element={<Profile />} />
-        <Route path='/cold-storage' element={<ColdStorage />} />
+        <Route path='/cold-storage' element={<ColdStoragePage />} />
         <Route path='/product' element={<Product />} />
         <Route path="/rent/:id" element={<RentVehicle />} />
         <Route path="/select-partner" element={<SelectPartner />} />
         <Route path="/confirm-ride" element={<ConfirmRide />} />
         <Route path="/payment-success" element={<RideSuccess />} />
-
+        <Route path='/checkout' element={<CheckoutPage />} />
+        <Route path='/cart-success' element={<CartSuccess />} />
       </Routes>
       <Footer />
     </>

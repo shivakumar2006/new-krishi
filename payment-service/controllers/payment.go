@@ -65,6 +65,7 @@ func (pc *PaymentController) VerifySession(w http.ResponseWriter, r *http.Reques
 }
 
 // 💳 CREATE CHECKOUT SESSION
+// 💳 CREATE CHECKOUT SESSION
 func (pc *PaymentController) CreateCheckoutSession(w http.ResponseWriter, r *http.Request) {
 
 	// Validate JWT
@@ -97,30 +98,45 @@ func (pc *PaymentController) CreateCheckoutSession(w http.ResponseWriter, r *htt
 				ProductData: &stripe.CheckoutSessionLineItemPriceDataProductDataParams{
 					Name: stripe.String(item.Title),
 				},
-				UnitAmount: stripe.Int64(int64(item.Price * 100)), // ₹ → paise
+				UnitAmount: stripe.Int64(int64(item.Price * 100)),
 			},
 			Quantity: stripe.Int64(item.Quantity),
 		})
 	}
 
-	rData := body.RideData
+	// Decide success URL
+	successURL := ""
+	if body.Mode == "cart" {
+		successURL = "http://localhost:5173/cart-success?session_id={CHECKOUT_SESSION_ID}"
+	} else {
+		successURL = "http://localhost:5173/booking-success?session_id={CHECKOUT_SESSION_ID}"
+	}
 
+	// Metadata based on mode
+	metadata := map[string]string{
+		"userId": userId,
+		"mode":   body.Mode,
+	}
+
+	if body.Mode == "booking" {
+		rData := body.RideData
+		metadata["vehicleName"] = rData.VehicleName
+		metadata["vehicleCategory"] = rData.VehicleCategory
+		metadata["pickup"] = rData.Pickup
+		metadata["destination"] = rData.Destination
+		metadata["days"] = strconv.Itoa(rData.Days)
+		metadata["partnerName"] = rData.PartnerName
+		metadata["totalFare"] = strconv.Itoa(rData.TotalFare)
+	}
+
+	// Create Stripe session
 	params := &stripe.CheckoutSessionParams{
 		PaymentMethodTypes: stripe.StringSlice([]string{"card"}),
 		LineItems:          lineItems,
 		Mode:               stripe.String("payment"),
-		SuccessURL:         stripe.String("http://localhost:5173/payment-success?session_id={CHECKOUT_SESSION_ID}"),
+		SuccessURL:         stripe.String(successURL),
 		CancelURL:          stripe.String("http://localhost:5173/payment-cancel"),
-		Metadata: map[string]string{
-			"userId":          userId,
-			"vehicleName":     rData.VehicleName,
-			"vehicleCategory": rData.VehicleCategory,
-			"pickup":          rData.Pickup,
-			"destination":     rData.Destination,
-			"days":            strconv.Itoa(rData.Days),
-			"partnerName":     rData.PartnerName,
-			"totalFare":       strconv.Itoa(rData.TotalFare),
-		},
+		Metadata:           metadata,
 	}
 
 	s, err := session.New(params)

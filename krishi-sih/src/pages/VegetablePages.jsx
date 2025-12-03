@@ -3,6 +3,7 @@ import {
     useGetVegetablesQuery,
     useGetVegetablesByCategoryQuery,
 } from "../store/api/VegetableApi";
+import { useAddToCartMutation } from "../store/api/CartApi";
 
 const categories = [
     "All",
@@ -22,6 +23,7 @@ const VegetablesPage = () => {
     const allData = useGetVegetablesQuery(undefined, {
         skip: selectedCategory !== "All",
     });
+    const [addToCart] = useAddToCartMutation();
 
     // GET BY CATEGORY
     const categoryData = useGetVegetablesByCategoryQuery(selectedCategory, {
@@ -36,6 +38,28 @@ const VegetablesPage = () => {
 
     if (loading) return <p className="text-gray-300">Loading vegetables...</p>;
     if (error) return <p className="text-red-400">Failed to load vegetables</p>;
+
+    const handleAddToCart = (veg) => {
+        const item = {
+            itemId: veg._id.toString(),
+            service: "vegetable",
+            name: veg.name,
+            price: veg.price,
+            image: veg.image,
+            category: veg.category,
+            quantity: 1
+        };
+
+        addToCart(item)
+            .unwrap()
+            .then(() => alert("Added to cart!"))
+            .catch((err) => {
+                console.error(err);
+                alert("Failed to add to cart");
+            });
+    };
+
+
 
     return (
         <div>
@@ -76,7 +100,9 @@ const VegetablesPage = () => {
                         <p className="text-sm text-gray-600">{veg.category}</p>
                         <p className="text-sm font-bold mt-1">₹{veg.price}/kg</p>
 
-                        <button className="w-full h-9 mt-2 rounded-2xl bg-green-500 hover:bg-green-600 transition-colors duration-300 cursor-pointer text-white">
+                        <button
+                            onClick={() => handleAddToCart(veg)}
+                            className="w-full h-9 mt-2 rounded-2xl bg-green-500 hover:bg-green-600 transition-colors duration-300 cursor-pointer text-white">
                             Add to cart
                         </button>
                     </div>

@@ -17,6 +17,7 @@ type RideData struct {
 }
 
 type CheckoutRequest struct {
+	Mode     string   `json:"mode"`
 	Items    []Item   `json:"items"`
 	RideData RideData `json:"rideData"`
 }

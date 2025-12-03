@@ -40,6 +40,7 @@ export default function Login() {
             }));
 
             alert("Login successful!");
+            localStorage.removeItem("last_session_id");
             navigate("/booking");
 
         } catch (err) {

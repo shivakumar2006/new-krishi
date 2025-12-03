@@ -3,6 +3,7 @@ import {
     useGetFruitsQuery,
     useGetFruitsByCategoryQuery,
 } from "../store/api/FruitsApi";
+import { useAddToCartMutation } from "../store/api/CartApi";
 
 const categories = [
     "All",
@@ -28,6 +29,8 @@ const FruitPage = () => {
         skip: selectedCategory === "All",
     });
 
+    const [addToCart] = useAddToCartMutation();
+
     const data = selectedCategory === "All" ? allData.data : categoryData.data;
     const loading =
         selectedCategory === "All" ? allData.isLoading : categoryData.isLoading;
@@ -36,6 +39,26 @@ const FruitPage = () => {
 
     if (loading) return <p className="text-gray-300">Loading fruits...</p>;
     if (error) return <p className="text-red-400">Failed to load fruits</p>;
+
+    const handleAddToCart = (fruit) => {
+        const item = {
+            itemId: fruit._id.toString(),
+            service: "fruit",
+            name: fruit.name,
+            price: fruit.price,
+            image: fruit.image,
+            category: fruit.category,
+            quantity: 1
+        };
+
+        addToCart(item)
+            .unwrap()
+            .then(() => alert("Added to cart!"))
+            .catch((err) => {
+                console.error(err);
+                alert("Failed to add to cart");
+            });
+    };
 
     return (
         <div>
@@ -76,7 +99,9 @@ const FruitPage = () => {
                         <p className="text-sm text-gray-600">{fruit.category}</p>
                         <p className="text-sm font-bold mt-1">₹{fruit.price}/kg</p>
 
-                        <button className="w-full h-9 mt-2 rounded-2xl bg-green-500 hover:bg-green-600 transition-colors duration-300 cursor-pointer text-white">
+                        <button
+                            onClick={() => handleAddToCart(fruit)}
+                            className="w-full h-9 mt-2 rounded-2xl bg-green-500 hover:bg-green-600 transition-colors duration-300 cursor-pointer text-white">
                             Add to cart
                         </button>
                     </div>

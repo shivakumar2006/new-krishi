@@ -3,6 +3,7 @@ import {
     useGetCropsQuery,
     useGetCropsByCategoryQuery,
 } from "../store/api/CropsApi";
+import { useAddToCartMutation } from "../store/api/CartApi";
 
 const categories = [
     "All",
@@ -23,6 +24,8 @@ const CropPage = () => {
         skip: selectedCategory === "All",
     });
 
+    const [addToCart] = useAddToCartMutation();
+
 
     const data = selectedCategory === "All" ? allData.data : categoryData.data;
     const loading =
@@ -32,6 +35,26 @@ const CropPage = () => {
 
     if (loading) return <p className="text-gray-300">Loading crops...</p>;
     if (error) return <p className="text-red-400">Failed to load crops</p>;
+
+    const handleAddToCart = (crop) => {
+        const item = {
+            itemId: crop._id.toString(),
+            service: "crop",
+            name: crop.name,
+            price: crop.price,
+            image: crop.image,
+            category: crop.category,
+            quantity: 1
+        };
+
+        addToCart(item)
+            .unwrap()
+            .then(() => alert("Added to cart!"))
+            .catch((err) => {
+                console.error(err);
+                alert("Failed to add to cart");
+            });
+    };
 
     return (
         <div>
@@ -73,7 +96,9 @@ const CropPage = () => {
                         <p className="text-sm text-gray-600">{crop.category}</p>
                         <p className="text-sm font-bold mt-1">₹{crop.price}/kg</p>
 
-                        <button className="w-full h-9 mt-2 rounded-2xl bg-green-500 hover:bg-green-600 transition-colors duration-300 cursor-pointer text-white">
+                        <button
+                            onClick={() => handleAddToCart(crop)}
+                            className="w-full h-9 mt-2 rounded-2xl bg-green-500 hover:bg-green-600 transition-colors duration-300 cursor-pointer text-white">
                             Add to cart
                         </button>
                     </div>

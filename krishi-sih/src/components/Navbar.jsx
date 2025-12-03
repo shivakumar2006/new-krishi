@@ -6,10 +6,12 @@ import img from "../assets/Krishi Logo.png";
 import { Menu, X, ChevronDown, ShoppingCart } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { useGetCartQuery } from "../store/api/CartApi";
 
 export default function Navbar() {
   const cart = useSelector((state) => state.cart.cartItems);
   const { user } = useSelector((state) => state.auth);
+  const { data } = useGetCartQuery();
 
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
@@ -188,8 +190,8 @@ export default function Navbar() {
           {languageSelector}
           <div onClick={() => navigate("/cart")} className="relative cursor-pointer">
             <ShoppingCart size={24} />
-            {cart.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">{cart.length}</span>
+            {data?.items?.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">{data?.items?.length}</span>
             )}
           </div>
         </div>

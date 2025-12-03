@@ -1,8 +1,30 @@
 import React from "react";
 import { useGetPulsesQuery } from "../store/api/PulsesApi";
+import { useAddToCartMutation } from "../store/api/CartApi";
 
 const PulsesPage = () => {
     const { data, isLoading, error } = useGetPulsesQuery();
+    const [addToCart] = useAddToCartMutation();
+
+    const handleAddToCart = (pulse) => {
+        const item = {
+            itemId: pulse._id.toString(),
+            service: "pulse",
+            name: pulse.name,
+            price: pulse.price,
+            image: pulse.image,
+            category: pulse.category,
+            quantity: 1
+        };
+
+        addToCart(item)
+            .unwrap()
+            .then(() => alert("Added to cart!"))
+            .catch((err) => {
+                console.error(err);
+                alert("Failed to add to cart");
+            });
+    };
 
     if (isLoading) return <p className="text-gray-300">Loading pulses...</p>;
     if (error) return <p className="text-red-400">Failed to load pulses</p>;
@@ -30,7 +52,9 @@ const PulsesPage = () => {
                         <p className="text-sm text-gray-600">Water: {pulse.waterRequirement}</p>
                         <p className="text-sm font-bold mt-1">₹{pulse.price}/kg</p>
 
-                        <button className="w-full h-9 mt-2 rounded-2xl bg-green-500 hover:bg-green-600 text-white">
+                        <button
+                            onClick={() => handleAddToCart(pulse)}
+                            className="w-full h-9 mt-2 rounded-2xl bg-green-500 hover:bg-green-600 text-white">
                             Add to cart
                         </button>
                     </div>

@@ -21,6 +21,7 @@ const ConfirmRide = () => {
     const handleConfirm = async () => {
         try {
             const response = await createCheckoutSession({
+                mode: "booking",
                 items: [
                     { title: vehicle.name, price: totalFare, quantity: 1 }
                 ],
