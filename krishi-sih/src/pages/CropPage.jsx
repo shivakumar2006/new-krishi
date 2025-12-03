@@ -20,6 +20,8 @@ const CropPage = () => {
     // API Calls
     const allData = useGetCropsQuery(undefined, { skip: selectedCategory !== "All" });
 
+    console.log(allData);
+
     const categoryData = useGetCropsByCategoryQuery(selectedCategory, {
         skip: selectedCategory === "All",
     });
@@ -86,7 +88,7 @@ const CropPage = () => {
                     >
                         <div className="h-44 bg-gray-200 rounded-md mb-2">
                             <img
-                                src={crop.image}
+                                src={`http://localhost:8000/images/${crop.image}`}
                                 alt={crop.name}
                                 className="w-full h-full object-cover rounded-md"
                             />

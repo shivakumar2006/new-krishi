@@ -1,244 +1,242 @@
-{
-    "crops": [
-        {
-            "_id": 1,
-            "name": "Wheat",
-            "image": "",
-            "category": "Careal Crops",
-            "soilType": "Loamy",
-            "season": "Rabi",
-            "waterRequirement": "Moderate",
-            "price": 20
-        },
-        {
-            "_id": 2,
-            "name": "Rice",
-            "image": "",
-            "category": "Careal Crops",
-            "soilType": "Clay",
-            "season": "Kharif",
-            "waterRequirement": "High",
-            "price": 25
-        },
-        {
-            "_id": 3,
-            "name": "Maize",
-            "image": "",
-            "category": "Careal Crops",
-            "soilType": "Sandy Loam",
-            "season": "Kharif",
-            "waterRequirement": "Moderate",
-            "price": 30
-        },
-        {
-            "_id": 4,
-            "name": "Barley",
-            "image": "",
-            "category": "Careal Crops",
-            "soilType": "Loamy",
-            "season": "Rabi",
-            "waterRequirement": "Low",
-            "price": 40
-        },
-        {
-            "_id": 5,
-            "name": "Sorghum (Jowar)",
-            "image": "",
-            "category": "Careal Crops",
-            "soilType": "Alluvial",
-            "season": "Kharif",
-            "waterRequirement": "Low",
-            "price": 30
-        },
-        {
-            "_id": 6,
-            "name": "Pearl Millet (Bajra)",
-            "image": "",
-            "category": "Careal Crops",
-            "soilType": "Black Soil",
-            "season": "Kharif",
-            "waterRequirement": "Low",
-            "price": 25
-        },
-        {
-            "_id": 7,
-            "name": "Finger Millet (Ragi)",
-            "image": "",
-            "category": "Careal Crops",
-            "soilType": "Sandy Loam",
-            "season": "Kharif",
-            "waterRequirement": "Moderate",
-            "price": 32
-        },
-        {
-            "_id": 8,
-            "name": "Sugarcane",
-            "image": "",
-            "category": "Cash Crops",
-            "soilType": "Alluvial",
-            "season": "Annual",
-            "waterRequirement": "High",
-            "price": 35
-        },
-        {
-            "_id": 9,
-            "name": "Cotton",
-            "image": "",
-            "category": "Cash Crops",
-            "soilType": "Black Soil",
-            "season": "Kharif",
-            "waterRequirement": "Moderate",
-            "price": 60
-        },
-        {
-            "_id": 10,
-            "name": "Jute",
-            "image": "",
-            "category": "Cash Crops",
-            "soilType": "Alluvial",
-            "season": "Kharif",
-            "waterRequirement": "High",
-            "price": 35
-        },
-        {
-            "_id": 11,
-            "name": "Tobacco",
-            "image": "",
-            "category": "Cash Crops",
-            "soilType": "Sandy Loam",
-            "season": "Rabi",
-            "waterRequirement": "Moderate",
-            "price": 150
-        },
-        {
-            "_id": 12,
-            "name": "Groundnut (Peanut)",
-            "image": "",
-            "category": "Oil Seeds",
-            "soilType": "Sandy Loam",
-            "season": "Kharif",
-            "waterRequirement": "Moderate",
-            "price": 70
-        },
-        {
-            "_id": 13,
-            "name": "Mustard",
-            "image": "",
-            "category": "Oil Seeds",
-            "soilType": "Loamy",
-            "season": "Rabi",
-            "waterRequirement": "Low",
-            "price": 65
-        },
-        {
-            "_id": 14,
-            "name": "Soybean",
-            "image": "",
-            "category": "Oil Seeds",
-            "soilType": "Loamy",
-            "season": "Kharif",
-            "waterRequirement": "Moderate",
-            "price": 40
-        },
-        {
-            "_id": 15,
-            "name": "Sunflower",
-            "image": "",
-            "category": "Oil Seeds",
-            "soilType": "Alluvial",
-            "season": "Kharif",
-            "waterRequirement": "Moderate",
-            "price": 80
-        },
-        {
-            "_id": 16,
-            "name": "Sesame (Til)",
-            "image": "",
-            "category": "Oil Seeds",
-            "soilType": "Sandy Loam",
-            "season": "Kharif",
-            "waterRequirement": "Low",
-            "price": 120
-        },
-        {
-            "_id": 17,
-            "name": "Safflower",
-            "image": "",
-            "category": "Oil Seeds",
-            "soilType": "Clay Loam",
-            "season": "Rabi",
-            "waterRequirement": "Low",
-            "price": 75
-        },
-        {
-            "_id": 18,
-            "name": "Linseed",
-            "image": "",
-            "category": "Oil Seeds",
-            "soilType": "Loamy",
-            "season": "Rabi",
-            "waterRequirement": "Low",
-            "price": 85
-        },
-        {
-            "_id": 19,
-            "name": "Castor Seed",
-            "image": "",
-            "category": "Oil Seeds",
-            "soilType": "Black soil",
-            "season": "Kharif",
-            "waterRequirement": "Moderate",
-            "price": 45
-        },
-        {
-            "_id": 20,
-            "name": "Tea",
-            "image": "",
-            "category": "Plantation Crops",
-            "soilType": "Acidic Soil",
-            "season": "Kharif",
-            "waterRequirement": "High",
-            "price": 200
-        },
-        {
-            "_id": 21,
-            "name": "Coffee",
-            "image": "",
-            "category": "Plantation Crops",
-            "soilType": "Loamy",
-            "season": "Kharif",
-            "waterRequirement": "High",
-            "price": 25
-        },
-        {
-            "_id": 22,
-            "name": "Coconut",
-            "image": "",
-            "category": "Plantation Crops",
-            "soilType": "Alluvial",
-            "season": "Kharif",
-            "waterRequirement": "High",
-            "price": 40
-        },
-        {
-            "_id": 23,
-            "name": "Rubber",
-            "image": "",
-            "category": "Plantation Crops",
-            "soilType": "Alluvial",
-            "season": "Kharif",
-            "waterRequirement": "High",
-            "price": 150
-        },
-        {
-            "_id": 24,
-            "name": "Cocoa",
-            "image": "",
-            "category": "Plantation Crops",
-            "soilType": "Clay loam",
-            "season": "Kharif",
-            "waterRequirement": "High",
-            "price": 300
-        }
-    ]
-}
+[
+    {
+        "_id": 1,
+        "name": "Wheat",
+        "image": "wheat.avif",
+        "category": "Careal Crops",
+        "soilType": "Loamy",
+        "season": "Rabi",
+        "waterRequirement": "Moderate",
+        "price": 20
+    },
+    {
+        "_id": 2,
+        "name": "Rice",
+        "image": "rice.avif",
+        "category": "Careal Crops",
+        "soilType": "Clay",
+        "season": "Kharif",
+        "waterRequirement": "High",
+        "price": 25
+    },
+    {
+        "_id": 3,
+        "name": "Maize",
+        "image": "maize.avif",
+        "category": "Careal Crops",
+        "soilType": "Sandy Loam",
+        "season": "Kharif",
+        "waterRequirement": "Moderate",
+        "price": 30
+    },
+    {
+        "_id": 4,
+        "name": "Barley",
+        "image": "barley.avif",
+        "category": "Careal Crops",
+        "soilType": "Loamy",
+        "season": "Rabi",
+        "waterRequirement": "Low",
+        "price": 40
+    },
+    {
+        "_id": 5,
+        "name": "Sorghum (Jowar)",
+        "image": "sorghum.avif",
+        "category": "Careal Crops",
+        "soilType": "Alluvial",
+        "season": "Kharif",
+        "waterRequirement": "Low",
+        "price": 30
+    },
+    {
+        "_id": 6,
+        "name": "Pearl Millet (Bajra)",
+        "image": "millet.jpg",
+        "category": "Careal Crops",
+        "soilType": "Black Soil",
+        "season": "Kharif",
+        "waterRequirement": "Low",
+        "price": 25
+    },
+    {
+        "_id": 7,
+        "name": "Finger Millet (Ragi)",
+        "image": "ragi.jpg",
+        "category": "Careal Crops",
+        "soilType": "Sandy Loam",
+        "season": "Kharif",
+        "waterRequirement": "Moderate",
+        "price": 32
+    },
+    {
+        "_id": 8,
+        "name": "Sugarcane",
+        "image": "sugarcane.avif",
+        "category": "Cash Crops",
+        "soilType": "Alluvial",
+        "season": "Annual",
+        "waterRequirement": "High",
+        "price": 35
+    },
+    {
+        "_id": 9,
+        "name": "Cotton",
+        "image": "cotton.avif",
+        "category": "Cash Crops",
+        "soilType": "Black Soil",
+        "season": "Kharif",
+        "waterRequirement": "Moderate",
+        "price": 60
+    },
+    {
+        "_id": 10,
+        "name": "Jute",
+        "image": "jute.jpg",
+        "category": "Cash Crops",
+        "soilType": "Alluvial",
+        "season": "Kharif",
+        "waterRequirement": "High",
+        "price": 35
+    },
+    {
+        "_id": 11,
+        "name": "Tobacco",
+        "image": "tobacco.jpg",
+        "category": "Cash Crops",
+        "soilType": "Sandy Loam",
+        "season": "Rabi",
+        "waterRequirement": "Moderate",
+        "price": 150
+    },
+    {
+        "_id": 12,
+        "name": "Groundnut (Peanut)",
+        "image": "groundnut.jpg",
+        "category": "Oil Seeds",
+        "soilType": "Sandy Loam",
+        "season": "Kharif",
+        "waterRequirement": "Moderate",
+        "price": 70
+    },
+    {
+        "_id": 13,
+        "name": "Mustard",
+        "image": "mustard.avif",
+        "category": "Oil Seeds",
+        "soilType": "Loamy",
+        "season": "Rabi",
+        "waterRequirement": "Low",
+        "price": 65
+    },
+    {
+        "_id": 14,
+        "name": "Soybean",
+        "image": "soybean.avif",
+        "category": "Oil Seeds",
+        "soilType": "Loamy",
+        "season": "Kharif",
+        "waterRequirement": "Moderate",
+        "price": 40
+    },
+    {
+        "_id": 15,
+        "name": "Sunflower",
+        "image": "sunflower.avif",
+        "category": "Oil Seeds",
+        "soilType": "Alluvial",
+        "season": "Kharif",
+        "waterRequirement": "Moderate",
+        "price": 80
+    },
+    {
+        "_id": 16,
+        "name": "Sesame (Til)",
+        "image": "sesame.avif",
+        "category": "Oil Seeds",
+        "soilType": "Sandy Loam",
+        "season": "Kharif",
+        "waterRequirement": "Low",
+        "price": 120
+    },
+    {
+        "_id": 17,
+        "name": "Safflower",
+        "image": "safflower.jpg",
+        "category": "Oil Seeds",
+        "soilType": "Clay Loam",
+        "season": "Rabi",
+        "waterRequirement": "Low",
+        "price": 75
+    },
+    {
+        "_id": 18,
+        "name": "Linseed",
+        "image": "linseed.avif",
+        "category": "Oil Seeds",
+        "soilType": "Loamy",
+        "season": "Rabi",
+        "waterRequirement": "Low",
+        "price": 85
+    },
+    {
+        "_id": 19,
+        "name": "Castor Seed",
+        "image": "castor.avif",
+        "category": "Oil Seeds",
+        "soilType": "Black soil",
+        "season": "Kharif",
+        "waterRequirement": "Moderate",
+        "price": 45
+    },
+    {
+        "_id": 20,
+        "name": "Tea",
+        "image": "tea.avif",
+        "category": "Plantation Crops",
+        "soilType": "Acidic Soil",
+        "season": "Kharif",
+        "waterRequirement": "High",
+        "price": 200
+    },
+    {
+        "_id": 21,
+        "name": "Coffee",
+        "image": "coffee.avif",
+        "category": "Plantation Crops",
+        "soilType": "Loamy",
+        "season": "Kharif",
+        "waterRequirement": "High",
+        "price": 25
+    },
+    {
+        "_id": 22,
+        "name": "Coconut",
+        "image": "coconut.avif",
+        "category": "Plantation Crops",
+        "soilType": "Alluvial",
+        "season": "Kharif",
+        "waterRequirement": "High",
+        "price": 40
+    },
+    {
+        "_id": 23,
+        "name": "Rubber",
+        "image": "rubber.avif",
+        "category": "Plantation Crops",
+        "soilType": "Alluvial",
+        "season": "Kharif",
+        "waterRequirement": "High",
+        "price": 150
+    },
+    {
+        "_id": 24,
+        "name": "Cocoa",
+        "image": "cocoa.avif",
+        "category": "Plantation Crops",
+        "soilType": "Clay loam",
+        "season": "Kharif",
+        "waterRequirement": "High",
+        "price": 300
+    }
+]
