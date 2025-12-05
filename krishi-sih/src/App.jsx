@@ -48,7 +48,7 @@ export default function App() {
         <Route path="/rent/:id" element={<RentVehicle />} />
         <Route path="/select-partner" element={<SelectPartner />} />
         <Route path="/confirm-ride" element={<ConfirmRide />} />
-        <Route path="/payment-success" element={<RideSuccess />} />
+        <Route path="/booking-success" element={<RideSuccess />} />
         <Route path='/checkout' element={<CheckoutPage />} />
         <Route path='/cart-success' element={<CartSuccess />} />
       </Routes>

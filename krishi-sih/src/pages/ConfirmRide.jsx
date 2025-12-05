@@ -63,7 +63,7 @@ const ConfirmRide = () => {
 
                     <div className="flex items-center gap-4">
                         <img
-                            src={vehicle.image || "https://via.placeholder.com/150"}
+                            src={`http://localhost:8095/images/${vehicle.image}`}
                             alt={vehicle.name}
                             className="w-28 h-20 rounded-lg object-cover border"
                         />

@@ -35,6 +35,29 @@ export default function CheckoutPage() {
         }
     };
 
+    const SERVICE_IMAGE_URL = {
+        crop: "http://localhost:8000/images/",
+        fruit: "http://localhost:8002/images/",
+        vegetable: "http://localhost:8001/images/",
+        rental: "http://localhost:8095/images/",
+        tool: "http://localhost:8004/images/",
+    };
+
+    const resolveImage = (item) => {
+        if (!item || !item.image) return "/default.png";
+
+        const serviceKey = String(item.service).toLowerCase().trim();
+        const baseUrl = SERVICE_IMAGE_URL[serviceKey];
+
+        if (!baseUrl) {
+            console.warn("Unknown service:", serviceKey, SERVICE_IMAGE_URL);
+            return "/default.png";
+        }
+
+        return baseUrl + item.image;
+    };
+
+
     return (
         <div className="p-6 max-w-4xl mx-auto">
 
@@ -51,7 +74,7 @@ export default function CheckoutPage() {
                     >
                         {/* IMAGE */}
                         <img
-                            src={item.image || "https://via.placeholder.com/80"}
+                            src={resolveImage(item)}
                             alt={item.name}
                             className="w-20 h-20 object-cover rounded"
                         />

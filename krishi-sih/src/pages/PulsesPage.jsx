@@ -6,6 +6,8 @@ const PulsesPage = () => {
     const { data, isLoading, error } = useGetPulsesQuery();
     const [addToCart] = useAddToCartMutation();
 
+    console.log(data);
+
     const handleAddToCart = (pulse) => {
         const item = {
             itemId: pulse._id.toString(),
@@ -41,7 +43,7 @@ const PulsesPage = () => {
                     >
                         <div className="h-44 bg-gray-200 rounded-md mb-2">
                             <img
-                                src={pulse.image}
+                                src={`http://localhost:8003/images/${pulse.image}`}
                                 alt={pulse.name}
                                 className="w-full h-full object-cover rounded-md"
                             />

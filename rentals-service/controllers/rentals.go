@@ -4,13 +4,13 @@ import (
 	"context"
 	"encoding/json"
 	"net/http"
+	"strconv"
 	"time"
 
 	"rentals-service/models"
 
 	"github.com/gorilla/mux"
 	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
@@ -57,11 +57,11 @@ func GetRentalsByCategory(w http.ResponseWriter, r *http.Request) {
 // GET BY ID
 // GET BY ID
 func GetRentalByID(w http.ResponseWriter, r *http.Request) {
-	id := mux.Vars(r)["id"]
+	idParam := mux.Vars(r)["id"]
 
-	objID, err := primitive.ObjectIDFromHex(id)
+	id, err := strconv.Atoi(idParam) // ✅ INT conversion
 	if err != nil {
-		http.Error(w, "Invalid ID format", http.StatusBadRequest)
+		http.Error(w, "Invalid ID", http.StatusBadRequest)
 		return
 	}
 
@@ -69,7 +69,8 @@ func GetRentalByID(w http.ResponseWriter, r *http.Request) {
 	defer cancel()
 
 	var rental models.Rental
-	err = RentalCollection.FindOne(ctx, bson.M{"_id": objID}).Decode(&rental)
+	err = RentalCollection.FindOne(ctx, bson.M{"_id": id}).Decode(&rental)
+
 	if err != nil {
 		http.Error(w, "Vehicle not found", http.StatusNotFound)
 		return

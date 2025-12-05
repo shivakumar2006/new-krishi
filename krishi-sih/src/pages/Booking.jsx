@@ -45,6 +45,8 @@ const BookingPage = () => {
   // Get all rentals
   const { data: allData, isLoading: loadingAll } = useGetAllRentalsQuery();
 
+  console.log(allData);
+
   // Get category specific rentals
   const { data: categoryData, isLoading: loadingCategory } =
     useGetRentalsByCategoryQuery(selectedCategory, { skip: selectedCategory === "All" });
@@ -73,26 +75,26 @@ const BookingPage = () => {
       desc: t("equipmentRentalDesc"),
       image: Equipment,
     },
-    {
-      title: t("cropAdvisory"),
-      desc: t("cropAdvisoryDesc"),
-      image: crop,
-    },
-    {
-      title: t("weatherForecast"),
-      desc: t("weatherForecastDesc"),
-      image: weather,
-    },
+    // {
+    //   title: t("cropAdvisory"),
+    //   desc: t("cropAdvisoryDesc"),
+    //   image: crop,
+    // },
+    // {
+    //   title: t("weatherForecast"),
+    //   desc: t("weatherForecastDesc"),
+    //   image: weather,
+    // },
     {
       title: t("soilHealthCheck"),
       desc: t("soilHealthCheckDesc"),
       image: soil,
     },
-    {
-      title: t("governmentSchemes"),
-      desc: t("governmentSchemesDesc"),
-      image: govern,
-    },
+    // {
+    //   title: t("governmentSchemes"),
+    //   desc: t("governmentSchemesDesc"),
+    //   image: govern,
+    // },
     {
       title: t("farmerSupport"),
       desc: t("farmerSupportDesc"),
@@ -294,7 +296,7 @@ const BookingPage = () => {
             >
               <div className="relative">
                 <img
-                  src={tool.image}
+                  src={`http://localhost:8095/images/${tool.image}`}
                   alt={tool.name}
                   className="w-full h-48 object-cover rounded-md"
                 />
@@ -319,7 +321,8 @@ const BookingPage = () => {
               </div>
 
               <Link
-                to={`/rent/${tool.id}`}   // id ki jagah id, _id nahi
+                to={`/rent/${tool._id}`}
+                // id ki jagah id, _id nahi
                 className={`mt-4 w-full block text-center py-2 text-sm font-semibold rounded-full transition ${tool.availability
                   ? "bg-green-800 text-white hover:bg-green-700"
                   : "bg-gray-400 text-gray-200 cursor-not-allowed"

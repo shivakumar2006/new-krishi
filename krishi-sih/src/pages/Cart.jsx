@@ -32,7 +32,35 @@ export default function Cart() {
     updateQty({ itemId, action });
   };
 
+  const SERVICE_IMAGE_URL = {
+    crop: "http://localhost:8000/images/",
+    fruit: "http://localhost:8002/images/",
+    vegetable: "http://localhost:8001/images/",
+    rental: "http://localhost:8095/images/",
+    tool: "http://localhost:8004/images/",
+  };
+
+  const resolveImage = (item) => {
+    if (!item || !item.image) return "/default.png";
+
+    const serviceKey = String(item.service).toLowerCase().trim();
+    const baseUrl = SERVICE_IMAGE_URL[serviceKey];
+
+    if (!baseUrl) {
+      console.warn("Unknown service:", serviceKey, SERVICE_IMAGE_URL);
+      return "/default.png";
+    }
+
+    return baseUrl + item.image;
+  };
+
+
+
+
   console.log(data);
+
+  cart.forEach(i => console.log(i.service, resolveImage(i)));
+
 
   return (
     <div className="bg-[#F9F3E0] min-h-screen flex justify-center p-6">
@@ -54,7 +82,7 @@ export default function Cart() {
               >
                 {/* Image */}
                 <img
-                  src={item.image}
+                  src={resolveImage(item)}
                   alt={item.name}
                   className="w-28 h-36 object-cover rounded-md"
                 />

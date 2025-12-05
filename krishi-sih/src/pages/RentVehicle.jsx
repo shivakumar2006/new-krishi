@@ -6,7 +6,8 @@ const RentVehicle = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    const { data: vehicle, isLoading } = useGetRentalByIdQuery(id);
+    const { data: vehicle, isLoading } = useGetRentalByIdQuery(Number(id));
+
 
     const [pickup, setPickup] = useState("");
     const [destination, setDestination] = useState("");
@@ -37,7 +38,7 @@ const RentVehicle = () => {
                 {/* Vehicle Image */}
                 <div className="w-full h-64 rounded-xl overflow-hidden shadow-md mb-6">
                     <img
-                        src={vehicle.image || "https://via.placeholder.com/600x400"}
+                        src={`http://localhost:8095/images/${vehicle.image}`}
                         alt={vehicle.name}
                         className="w-full h-full object-cover"
                     />

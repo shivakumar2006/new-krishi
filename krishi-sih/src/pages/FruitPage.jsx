@@ -89,7 +89,7 @@ const FruitPage = () => {
                     >
                         <div className="h-44 bg-gray-200 rounded-md mb-2">
                             <img
-                                src={fruit.image}
+                                src={`http://localhost:8002/images/${fruit.image}`}
                                 alt={fruit.name}
                                 className="w-full h-full object-cover rounded-md"
                             />
