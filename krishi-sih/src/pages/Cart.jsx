@@ -82,7 +82,7 @@ export default function Cart() {
               >
                 {/* Image */}
                 <img
-                  src={resolveImage(item)}
+                  src={resolveImage(item) ? resolveImage(item) : `${item.name}`}
                   alt={item.name}
                   className="w-28 h-36 object-cover rounded-md"
                 />

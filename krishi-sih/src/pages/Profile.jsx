@@ -48,7 +48,7 @@ const Profile = () => {
                         const id = localStorage.getItem("last_session_id");
                         if (!id) return alert("No previous successful booking found.");
 
-                        navigate(`/payment-success?session_id=${id}`);
+                        navigate(`/booking-success?session_id=${id}`);
                     }}
                     className="bg-green-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition"
                 >

@@ -97,12 +97,13 @@ const Product = () => {
                         className="bg-white shadow-md rounded-lg p-3 hover:shadow-lg transition border border-gray-100"
                     >
                         {/* IMAGE */}
-                        <div className="h-40 bg-gray-200 rounded-lg mb-3 overflow-hidden">
-                            <img
-                                src={product.imageUrl}
+                        <div className="h-40 bg-black/70 text-white rounded-lg mb-3 overflow-hidden flex justify-center items-center">
+                            {/* <img
+                                // src={product.imageUrl}
                                 alt={product.name}
-                                className="w-full h-full object-cover"
-                            />
+                                className="w-full h-full object-cover bg-black text-white"
+                            /> */}
+                            {product.name}
                         </div>
 
                         {/* PRODUCT NAME */}

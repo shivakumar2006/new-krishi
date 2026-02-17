@@ -21,6 +21,9 @@ const authSlice = createSlice({
             // Save to localStorage
             localStorage.setItem("token", token);
             localStorage.setItem("user", JSON.stringify(user));
+            if (!localStorage.getItem(`cart_${user._id}`)) {
+                localStorage.setItem(`cart_${user._id}`, JSON.stringify([]));
+            }
         },
 
         logout: (state) => {

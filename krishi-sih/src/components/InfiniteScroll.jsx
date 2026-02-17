@@ -1,13 +1,21 @@
 import React from "react";
+import img1 from "../assets/images/img1.png";
+import img2 from "../assets/images/img2.png";
+import img3 from "../assets/images/img3.webp";
+import img4 from "../assets/images/img4.png";
+import img5 from "../assets/images/img5.png";
+import img6 from "../assets/images/img6.png";
 
-const images = [
-  "/images/img1.png",
-  "/images/img2.png",
-  "/images/img3.png",
-  "/images/img4.png",
-  "/images/img5.png",
-  "/images/img6.png",
-];
+// const images = [
+//   "/assets/images/img1.png",
+//   "/assets/images/img2.png",
+//   "/assets/images/img3.webp",
+//   "/assets/images/img4.png",
+//   "/assets/images/img5.png",
+//   "/assets/images/img6.png",
+// ];
+
+const images = [img1, img2, img3, img4, img5, img6]
 
 const InfiniteScroll = () => {
   return (
