@@ -95,7 +95,7 @@ export default function Navbar() {
 
   const handleCart = () => {
     if (!user) {
-      toast.info('⚠️ Please login first! for access services', {
+      toast.info('⚠️ Please login first! for access cart', {
         position: "bottom-right",
         autoClose: 2000,
         hideProgressBar: false,
