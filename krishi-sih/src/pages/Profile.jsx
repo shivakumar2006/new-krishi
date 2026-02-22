@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../store/authSlice";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast, Bounce } from "react-toastify";
 
 const Profile = () => {
     const dispatch = useDispatch();
@@ -28,13 +28,37 @@ const Profile = () => {
 
     const handleLastBooking = () => {
         const id = localStorage.getItem("last_session_id");
-        if (!id) return alert("No previous successful booking found.");
+        if (!id) {
+            return toast.error("No previous successful booking found.", {
+                position: "bottom-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+            });
+        }
         navigate(`/booking-success?session_id=${id}`);
     };
 
     const handleCartBooking = () => {
         const id = localStorage.getItem("last_session_id");
-        if (!id) return alert("No previous successful booking found.");
+        if (!id) {
+            return toast.error("No previous successful booking found.", {
+                position: "bottom-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+            });
+        }
         navigate(`/cart-success?session_id=${id}`);
     };
 
