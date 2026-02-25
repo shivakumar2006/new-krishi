@@ -7,7 +7,6 @@ import { fetchIrrigationSchedule } from "../api/mockApi";
 // ── Animated background ────────────────────────────────────────────────────────
 const Particles = React.memo(() => (
     <div style={{ position: "fixed", inset: 0, pointerEvents: "none", zIndex: 0, overflow: "hidden" }}>
-        {/* Water-blue breathing orbs */}
         {[
             { w: "580px", h: "580px", top: "-18%", left: "-12%", bg: "radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 65%)", anim: "orbFloat1 22s ease-in-out infinite" },
             { w: "400px", h: "400px", top: "55%", right: "-8%", bg: "radial-gradient(circle, rgba(6,182,212,0.10) 0%, transparent 65%)", anim: "orbFloat2 26s ease-in-out infinite" },
@@ -16,8 +15,6 @@ const Particles = React.memo(() => (
         ].map((o, i) => (
             <div key={i} style={{ position: "absolute", width: o.w, height: o.h, top: o.top, left: o.left, right: o.right, bottom: o.bottom, borderRadius: "50%", background: o.bg, animation: o.anim }} />
         ))}
-
-        {/* Droplet-shaped particles */}
         {[...Array(50)].map((_, i) => (
             <div key={i} style={{
                 position: "absolute",
@@ -30,8 +27,6 @@ const Particles = React.memo(() => (
                 animation: `particleFall ${5 + Math.random() * 8}s ${Math.random() * 6}s ease-in-out infinite alternate`,
             }} />
         ))}
-
-        {/* Ripple rings */}
         {[{ top: "20%", left: "75%" }, { top: "70%", left: "20%" }].map((pos, i) => (
             <div key={i} style={{ position: "absolute", ...pos }}>
                 {[0, 1, 2].map(r => (
@@ -39,11 +34,7 @@ const Particles = React.memo(() => (
                 ))}
             </div>
         ))}
-
-        {/* Horizontal scan line */}
         <div style={{ position: "absolute", left: 0, right: 0, height: "1px", background: "linear-gradient(90deg, transparent, rgba(56,189,248,0.13), transparent)", animation: "scanLine 9s linear infinite" }} />
-
-        {/* Grid */}
         <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(14,165,233,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,0.04) 1px, transparent 1px)", backgroundSize: "50px 50px" }} />
     </div>
 ));
@@ -87,9 +78,28 @@ const Panel = ({ children, accent = false, style: extraStyle = {} }) => (
     </div>
 );
 
-// ── Styled select ──────────────────────────────────────────────────────────────
+// ── Land size options ──────────────────────────────────────────────────────────
+const LAND_OPTIONS = [
+    { label: "0.5 Acres", value: "0.5" },
+    { label: "1 Acre", value: "1" },
+    { label: "2 Acres", value: "2" },
+    { label: "3 Acres", value: "3" },
+    { label: "5 Acres", value: "5" },
+    { label: "10 Acres", value: "10" },
+    { label: "20 Acres", value: "20" },
+    { label: "50 Acres", value: "50" },
+    { label: "100 Acres", value: "100" },
+];
+
+// ── Styled select — supports plain string[] OR { label, value }[] ──────────────
 const StyledSelect = ({ label, value, onChange, options }) => {
     const [focused, setFocused] = useState(false);
+
+    // Normalise options to always be { label, value }
+    const normalised = options.map(o =>
+        typeof o === "string" ? { label: o, value: o } : o
+    );
+
     return (
         <div style={{ display: "flex", flexDirection: "column", gap: "6px", minWidth: "160px" }}>
             <label style={{ fontSize: "10px", fontWeight: "700", letterSpacing: "2px", textTransform: "uppercase", color: "rgba(56,189,248,0.55)" }}>{label}</label>
@@ -118,8 +128,10 @@ const StyledSelect = ({ label, value, onChange, options }) => {
                     }}
                 >
                     <option value="" style={{ background: "#0c1a2e", color: "rgba(255,255,255,0.5)" }}>Select {label}</option>
-                    {options.map(o => (
-                        <option key={o} value={o} style={{ background: "#0c1a2e", color: "#fff" }}>{o}</option>
+                    {normalised.map(o => (
+                        <option key={o.value} value={o.value} style={{ background: "#0c1a2e", color: "#fff" }}>
+                            {o.label}
+                        </option>
                     ))}
                 </select>
                 <span style={{ position: "absolute", right: "14px", top: "50%", transform: "translateY(-50%)", fontSize: "12px", color: "rgba(56,189,248,0.6)", pointerEvents: "none" }}>▾</span>
@@ -139,6 +151,7 @@ const AnimatedDay = ({ children, index }) => (
 export default function IrrigationScheduler() {
     const [crop, setCrop] = useState("");
     const [soil, setSoil] = useState("");
+    const [land, setLand] = useState("");          // stored as string e.g. "2"
     const [schedule, setSchedule] = useState(null);
     const [loading, setLoading] = useState(false);
     const [genCount, setGenCount] = useState(0);
@@ -150,16 +163,20 @@ export default function IrrigationScheduler() {
         return () => clearInterval(id);
     }, []);
 
-    const load = async (c, s) => {
-        if (!c || !s) return;
+    // Derive display label from value
+    const landLabel = land
+        ? LAND_OPTIONS.find(o => o.value === land)?.label ?? `${land} Acres`
+        : "";
+
+    const load = async (c, s, l) => {
+        if (!c || !s || !l) return;
         setLoading(true);
         setSchedule(null);
         setTotalWater(null);
         try {
-            const res = await fetchIrrigationSchedule({ crop: c, soil: s });
+            const res = await fetchIrrigationSchedule({ crop: c, soil: s, landAcres: parseFloat(l) });
             setSchedule(res);
             setGenCount(n => n + 1);
-            // compute a mock total water usage if days expose it
             const total = res.reduce((acc, d) => acc + (d.waterMm || d.water_mm || d.amount || 0), 0);
             if (total > 0) setTotalWater(total);
         } catch (err) {
@@ -170,9 +187,9 @@ export default function IrrigationScheduler() {
         }
     };
 
-    useEffect(() => { load(crop, soil); }, [crop, soil]);
+    useEffect(() => { load(crop, soil, land); }, [crop, soil, land]);
 
-    const bothSelected = crop && soil;
+    const allSelected = crop && soil && land;
 
     return (
         <div style={{
@@ -194,7 +211,6 @@ export default function IrrigationScheduler() {
                                 <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#38bdf8", display: "inline-block", boxShadow: "0 0 8px #38bdf8", animation: "pulseDot 2s infinite" }} />
                                 <span style={{ fontSize: "11px", fontWeight: "700", color: "#38bdf8", letterSpacing: "2px", textTransform: "uppercase" }}>Smart Scheduling · Active</span>
                             </div>
-
                             <h1 style={{ margin: "0 0 10px", fontSize: "clamp(28px,4.5vw,48px)", fontWeight: "800", lineHeight: 1.05, letterSpacing: "-1px" }}>
                                 Irrigation
                                 <span style={{ display: "block", background: "linear-gradient(90deg, #38bdf8, #7dd3fc, #bae6fd)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
@@ -202,7 +218,7 @@ export default function IrrigationScheduler() {
                                 </span>
                             </h1>
                             <p style={{ margin: 0, color: "rgba(255,255,255,0.38)", fontSize: "15px", maxWidth: "440px", lineHeight: 1.65 }}>
-                                Select your crop and soil type to auto-generate an optimised 7-day irrigation schedule tailored to your field conditions.
+                                Select your crop, soil type, and land size to auto-generate an optimised 7-day irrigation schedule tailored to your field.
                             </p>
                         </div>
 
@@ -229,6 +245,7 @@ export default function IrrigationScheduler() {
                         {[
                             { icon: "🌾", label: "Crops Supported", value: "4+" },
                             { icon: "🪨", label: "Soil Types", value: "4" },
+                            { icon: "📐", label: "Land Sizes", value: "9" },
                             { icon: "📅", label: "Schedule Length", value: "7 Days" },
                             { icon: "💧", label: "Water Saved (avg)", value: "~18%" },
                         ].map((m, i) => (
@@ -255,7 +272,7 @@ export default function IrrigationScheduler() {
 
                 {/* ── Controls panel ── */}
                 <div style={{ animation: "panelIn 0.7s 120ms both ease", marginBottom: "24px" }}>
-                    <Panel accent={bothSelected}>
+                    <Panel accent={!!allSelected}>
                         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
 
                             {/* Top row — title + selects */}
@@ -263,7 +280,7 @@ export default function IrrigationScheduler() {
                                 <div>
                                     <SectionDivider label="Configuration" />
                                     <p style={{ margin: 0, fontSize: "13px", color: "rgba(255,255,255,0.38)", lineHeight: 1.5, maxWidth: "320px" }}>
-                                        Choose your crop and soil type. A 7-day schedule generates automatically.
+                                        Choose your crop, soil type, and land size. A 7-day schedule generates automatically.
                                     </p>
                                 </div>
 
@@ -280,11 +297,18 @@ export default function IrrigationScheduler() {
                                         onChange={setSoil}
                                         options={["Loamy", "Sandy", "Clayey", "Silty"]}
                                     />
+                                    {/* ✅ Land size — uses normalised { label, value } options */}
+                                    <StyledSelect
+                                        label="Land Size"
+                                        value={land}
+                                        onChange={setLand}
+                                        options={LAND_OPTIONS}
+                                    />
                                 </div>
                             </div>
 
                             {/* Selection summary pills */}
-                            {(crop || soil) && (
+                            {(crop || soil || land) && (
                                 <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", animation: "fadeIn 0.3s both ease" }}>
                                     {crop && (
                                         <div style={{ display: "flex", alignItems: "center", gap: "7px", background: "rgba(56,189,248,0.10)", border: "1px solid rgba(56,189,248,0.22)", borderRadius: "99px", padding: "5px 14px", fontSize: "12px", fontWeight: "700", color: "#7dd3fc" }}>
@@ -296,7 +320,12 @@ export default function IrrigationScheduler() {
                                             🪨 {soil}
                                         </div>
                                     )}
-                                    {bothSelected && !loading && schedule && (
+                                    {land && (
+                                        <div style={{ display: "flex", alignItems: "center", gap: "7px", background: "rgba(56,189,248,0.10)", border: "1px solid rgba(56,189,248,0.22)", borderRadius: "99px", padding: "5px 14px", fontSize: "12px", fontWeight: "700", color: "#7dd3fc" }}>
+                                            📐 {landLabel}
+                                        </div>
+                                    )}
+                                    {allSelected && !loading && schedule && (
                                         <div style={{ display: "flex", alignItems: "center", gap: "7px", background: "rgba(16,185,129,0.10)", border: "1px solid rgba(16,185,129,0.22)", borderRadius: "99px", padding: "5px 14px", fontSize: "12px", fontWeight: "700", color: "#6ee7b7" }}>
                                             ✓ Schedule ready
                                         </div>
@@ -328,10 +357,11 @@ export default function IrrigationScheduler() {
                                     </div>
                                     <div>
                                         <div style={{ fontSize: "16px", fontWeight: "700", color: "#fff" }}>Generating schedule…</div>
-                                        <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.38)", marginTop: "4px" }}>Optimising irrigation for {crop} on {soil} soil</div>
+                                        <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.38)", marginTop: "4px" }}>
+                                            Optimising irrigation for {crop} on {soil} soil · {landLabel}
+                                        </div>
                                     </div>
                                 </div>
-                                {/* Skeleton day cards */}
                                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "14px" }}>
                                     {[...Array(7)].map((_, i) => (
                                         <div key={i} style={{ height: "130px", borderRadius: "16px", background: "rgba(255,255,255,0.04)", animation: `skeletonPulse 1.4s ${i * 120}ms ease-in-out infinite` }} />
@@ -342,25 +372,25 @@ export default function IrrigationScheduler() {
                     )}
 
                     {/* Empty — nothing selected yet */}
-                    {!loading && !schedule && !bothSelected && (
+                    {!loading && !schedule && !allSelected && !crop && !soil && !land && (
                         <Panel>
                             <div style={{ textAlign: "center", padding: "60px 24px" }}>
-                                <div style={{ fontSize: "60px", marginBottom: "18px", opacity: 0.5, filter: "grayscale(0.2)" }}>💧</div>
-                                <div style={{ fontSize: "17px", fontWeight: "700", color: "rgba(255,255,255,0.45)", marginBottom: "10px" }}>Select crop & soil to begin</div>
-                                <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.28)", lineHeight: 1.7, maxWidth: "320px", margin: "0 auto" }}>
-                                    Use the dropdowns above to choose your crop type and soil composition. Your 7-day irrigation plan will generate instantly.
+                                <div style={{ fontSize: "60px", marginBottom: "18px", opacity: 0.5 }}>💧</div>
+                                <div style={{ fontSize: "17px", fontWeight: "700", color: "rgba(255,255,255,0.45)", marginBottom: "10px" }}>Select crop, soil & land size to begin</div>
+                                <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.28)", lineHeight: 1.7, maxWidth: "340px", margin: "0 auto" }}>
+                                    Use the dropdowns above to choose your crop type, soil composition, and land size in acres. Your 7-day irrigation plan generates instantly.
                                 </div>
                             </div>
                         </Panel>
                     )}
 
-                    {/* Only one selected */}
-                    {!loading && !schedule && bothSelected === false && (crop || soil) && (
+                    {/* Partially selected — waiting */}
+                    {!loading && !schedule && !allSelected && (crop || soil || land) && (
                         <Panel>
                             <div style={{ textAlign: "center", padding: "40px 24px" }}>
                                 <div style={{ fontSize: "40px", marginBottom: "14px" }}>⏳</div>
                                 <div style={{ fontSize: "15px", fontWeight: "600", color: "rgba(255,255,255,0.45)" }}>
-                                    {crop ? "Now select a soil type" : "Now select a crop"}
+                                    {!crop ? "Select a crop" : !soil ? "Select a soil type" : "Select a land size"}
                                 </div>
                             </div>
                         </Panel>
@@ -369,7 +399,7 @@ export default function IrrigationScheduler() {
                     {/* Schedule grid */}
                     {!loading && schedule && (
                         <div>
-                            <SectionDivider label={`7-Day Schedule · ${crop} · ${soil} Soil`} />
+                            <SectionDivider label={`7-Day Schedule · ${crop} · ${soil} Soil · ${landLabel}`} />
                             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(155px, 1fr))", gap: "14px" }}>
                                 {schedule.map((d, idx) => (
                                     <AnimatedDay key={d.day} index={idx}>
@@ -382,6 +412,7 @@ export default function IrrigationScheduler() {
                             <div style={{ marginTop: "24px", display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
                                 {[
                                     { icon: "📋", text: "7 days planned" },
+                                    { icon: "📐", text: `${landLabel} field` },
                                     { icon: "🌡️", text: "Temperature-adjusted" },
                                     { icon: "🔄", text: "Auto-updates on change" },
                                     { icon: "✅", text: "Field-ready output" },
