@@ -13,16 +13,40 @@ export default function CropForm({ onSubmit, initial = {} }) {
         rainfall: initial.rainfall ?? "",
     });
 
-    const update = (key) => (e) => setForm((s) => ({ ...s, [key]: e.target.value }));
+    const [errors, setErrors] = useState({});
 
-    // Count filled fields
+    const update = (key) => (e) => {
+        const value = e.target.value;
+
+        setForm((s) => ({ ...s, [key]: value }));
+
+        // Clear error when user starts typing
+        if (errors[key]) {
+            setErrors((prev) => ({ ...prev, [key]: "" }));
+        }
+    };
+
     const filledCount = useMemo(() => {
         return Object.values(form).filter((v) => v !== "").length;
     }, [form]);
 
     const submit = (e) => {
         e?.preventDefault();
-        if (filledCount < 3) return; // safety
+
+        let newErrors = {};
+
+        if (!form.temp) {
+            newErrors.temp = "Temperature is required";
+        }
+
+        if (filledCount < 3) {
+            return;
+        }
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
 
         onSubmit({
             n: Number(form.n || 0),
@@ -34,7 +58,10 @@ export default function CropForm({ onSubmit, initial = {} }) {
         });
     };
 
-    const reset = () => setForm({ n: "", p: "", k: "", temp: "", ph: "", rainfall: "" });
+    const reset = () => {
+        setForm({ n: "", p: "", k: "", temp: "", ph: "", rainfall: "" });
+        setErrors({});
+    };
 
     return (
         <form onSubmit={submit}>
@@ -50,12 +77,24 @@ export default function CropForm({ onSubmit, initial = {} }) {
                     <InputField id="n" label="Nitrogen (N)" value={form.n} onChange={update("n")} placeholder="e.g. 40" />
                     <InputField id="p" label="Phosphorus (P)" value={form.p} onChange={update("p")} placeholder="e.g. 30" />
                     <InputField id="k" label="Potassium (K)" value={form.k} onChange={update("k")} placeholder="e.g. 20" />
-                    <InputField id="temp" label="Temperature (°C)" value={form.temp} onChange={update("temp")} placeholder="e.g. 28" />
+
+                    <div>
+                        <InputField
+                            id="temp"
+                            label="Temperature (°C)"
+                            value={form.temp}
+                            onChange={update("temp")}
+                            placeholder="e.g. 28"
+                        />
+                        {errors.temp && (
+                            <p className="text-xs text-red-400 mt-1">{errors.temp}</p>
+                        )}
+                    </div>
+
                     <InputField id="ph" label="pH level" value={form.ph} onChange={update("ph")} placeholder="e.g. 6.5" />
                     <InputField id="rainfall" label="Rainfall (mm)" value={form.rainfall} onChange={update("rainfall")} placeholder="e.g. 120" />
                 </div>
 
-                {/* Hint if not enough fields */}
                 {filledCount < 3 && (
                     <p className="text-xs text-red-300">At least 3 fields are required.</p>
                 )}
