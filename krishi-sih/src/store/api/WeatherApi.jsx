@@ -8,11 +8,11 @@ export const weatherApi = createApi({
 
     endpoints: (builder) => ({
         getForecast: builder.query({
-            query: ({ city, days = 7 }) =>
+            query: ({ city, days = 20 }) =>
                 `forecast.json?key=${import.meta.env.VITE_WEATHER_API_KEY}&q=${city}&days=${days}`,
         }),
         getPastWeather: builder.query({
-            query: ({ city, date = 5 }) =>
+            query: ({ city, date }) =>
                 `history.json?key=${import.meta.env.VITE_WEATHER_API_KEY}&q=${city}&dt=${date}`,
         }),
     })
