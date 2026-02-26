@@ -258,8 +258,8 @@ const SmartFarming = () => {
             TAB CONTENT PANEL
         ════════════════════════════════════════ */}
         <div style={{ animation: "tabFadeIn 0.4s both ease" }} key={activeTab}>
-          {activeTab === "crop" && <CropRecommendation />}
           {activeTab === "soil" && <SoilHealth />}
+          {activeTab === "crop" && <CropRecommendation />}
           {activeTab === "irrigation" && <IrrigationScheduler />}
         </div>
 
